@@ -36,3 +36,4 @@ We are training the electronics on diverse marine life. All life have different 
 4. [Water pH module](https://www.amazon.in/SLB-Works-Detection-arduino-Monitoring/dp/B077JRWZSH/ref=sr_1_fkmr1_3?ie=UTF8&qid=1524232870&sr=8-3-fkmr1&keywords=water+ph+sensor+arduino)
 5. [4 channel relay](https://www.amazon.in/REES52-Optocoupler-Channel-Control-Arduino/dp/B01HXM1G9Q/ref=sr_1_1?ie=UTF8&qid=1524233009&sr=8-1&keywords=relay+for+arduino)
 6. [Water pump](https://www.amazon.in/dp/B07CJG6SJR/ref=sr_1_14?s=industrial&ie=UTF8&qid=1524233181&sr=1-14&keywords=aquarium)
+7. [ADC over I2c](https://www.amazon.in/gp/product/B01985E9CW/ref=oh_aui_search_detailpage?ie=UTF8&psc=1)
