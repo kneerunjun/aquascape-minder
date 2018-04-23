@@ -37,3 +37,18 @@ We are training the electronics on diverse marine life. All life have different 
 5. [4 channel relay](https://www.amazon.in/REES52-Optocoupler-Channel-Control-Arduino/dp/B01HXM1G9Q/ref=sr_1_1?ie=UTF8&qid=1524233009&sr=8-1&keywords=relay+for+arduino)
 6. [Water pump](https://www.amazon.in/dp/B07CJG6SJR/ref=sr_1_14?s=industrial&ie=UTF8&qid=1524233181&sr=1-14&keywords=aquarium)
 7. [ADC over I2c](https://www.amazon.in/gp/product/B01985E9CW/ref=oh_aui_search_detailpage?ie=UTF8&psc=1)
+
+#### Scheduling the water filter :
+
+Incase of the water filter we want a fine balance between the hours of operation / day and the life of the filter. Continuous operation of the filter would mean we have lesser life expectancy while short stints of operation could mean we aren't keeping water body (tank) clean enough.
+
+Air pump cannot run in the dark time, as we want the creatures to rest and have calm water body. Filter than can substitute the air supply and keep the water body aerated incase of depletion of O2 levels. We are not expecting the filter to entirely supply the O2 but just maintain a fine balance just incase of contingency.
+
+We also need the water filter to be `OFF` when its feeding time. We have observed that leftover fishfood is then caught in the filter if it coincides.Typical comfortable schedule would be a hour after the food is suppled the filter can be set in `ON` state.
+
+|Time of the day|Total hours |State|
+|-----|-----|-----|
+|00:00-06:00|06|ON|
+|06:00-12:00|06|OFF|
+|12:00-18:00|06|ON|
+|18:00-00:00|06|OFF|
