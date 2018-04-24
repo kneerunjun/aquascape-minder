@@ -7,6 +7,16 @@ Driven by Raspberry Pi3B we expect to measure / control the following things :
 
 Features of the end product :
 
+|Parameter|Description|Control & Actuation|Rule|
+|----|----|----|----|
+|Illumination|LED illumination helps healthy foliage growth  in the tank, and provides embellishment|LED tube , A/C controlled from a D/C switch relay|Minimum of 06 hrs ON state|
+|Temperature|For marine creatures we are working with are all tropical creatures, the temperature of the water is preferred between 24oC to 27oC||
+|Aeration|||
+|Filtration|||
+|pH levels|||
+|Feeder|||
+
+
 - Water temperature control, heater schedule
 - Water level / replenish schedule
 - PH of the water
@@ -92,3 +102,10 @@ We are currently exploring the availability of thermo probe that can work well w
 |Air pump|OFF|ON|ON|OFF|OFF|ON|11|
 |LED|OFF|ON|OFF|OFF|ON|ON|10|
 |Feeder|OFF|OFF|OFF|OFF|ON|OFF|01|
+
+
+### Domain references
+----
+
+1. [Aquarium temperatures](https://www.thesprucepets.com/aquarium-water-temperature-1381896)
+<sub><sup>So what is the best temperature for your fish? It depends on the species, but in general, tropical fish are most healthy in the range of 75-80°F (24-27°C). Cold water fish do better in temperatures well below that, some of them enjoy water well below 70°F, which is not suitable for any tropical fish.Ultimately the best temperature will depend on the species of fish in the aquarium. Research the fish you are interested in keeping before setting up an aquarium, and only chose those that have similar needs. Use a dependable heater, thermometer, and check the water temperature regularly to ensure frequent or large temperature changes don't occur.</sup><sub>
