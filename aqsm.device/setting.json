@@ -1,0 +1,26 @@
+{
+  "settings":{
+    "crons":{
+      "led":{
+        "on":{"hours":"6-7,18-23", "minutes":"0-59"},
+        "off":{"hours":"8-17,0-5","minutes":"0-59"}
+      },
+      "airpump":{
+        "on":{"hours":"6-7,8-11,19-23", "minutes":"0-59"},
+        "off":{"hours":"0-5,12-18","minutes":"0-59"}
+      },
+      "filter":{
+        "on":{"hours":"0-5", "minutes":"0-59"},
+        "off":{"hours":"6-23","minutes":"0-59"}
+      },
+      "feeder":{
+        "on":{"hours":"18", "minutes":"0-59"},
+        "off":{"hours":"0-17,19-23","minutes":"0-59"}
+      },
+      "test":{
+        "on":{"hours":"0-20", "minutes":"0-59"},
+        "off":{"hours":"21-23","minutes":"0-59"}
+      }
+    }
+  }
+}

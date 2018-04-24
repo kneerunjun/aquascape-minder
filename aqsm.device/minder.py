@@ -3,6 +3,8 @@ import time, pdb,json,sys, threading
 from collections import namedtuple
 from queue import Queue
 
+import cloudlink, schedules
+
 def error_log(message):
     pass
     print(message)
@@ -17,7 +19,6 @@ def config_from_json():
     }
 def check_configure(config):
     return True
-
 class SensingT(threading.Thread):
     '''Worker thread that does all the sensing on the device
     '''
@@ -29,28 +30,7 @@ class SensingT(threading.Thread):
         while not self.killEvent.wait(1):
             print("Monitoring now..")
             time.sleep(self.config["delays"]["sensing"])
-class UplinkingT(threading.Thread):
-    '''Worker thread that helps send the device recordings to the cloud
-    '''
-    def __init__(self,ke,cfg):
-        super(UplinkingT,self).__init__()
-        self.killEvent  = ke
-        self.config = cfg
-    def run(self):
-        while not self.killEvent.wait(1):
-            print("Uplinking now..")
-            time.sleep(self.config["delays"]["uplinking"])
-class DownlinkingT(threading.Thread):
-    '''Worker thread that helps the device to be in constant touch with the settings change on the cloud
-    '''
-    def __init__(self,ke,cfg):
-        super(DownlinkingT,self).__init__()
-        self.killEvent  = ke
-        self.config = cfg
-    def run(self):
-        while not self.killEvent.wait(1):
-            print("Downlinking now..")
-            time.sleep(self.config["delays"]["downlinking"])
+
 class InterruptT(threading.Thread):
     '''Worker thread that waits in anticipation of any hardware interrupt.
     Upon an interrupt this would trigger an event that in turn requests all threads to exit
@@ -60,13 +40,15 @@ class InterruptT(threading.Thread):
         self.killEvent  = ke
         self.config = cfg
     def run(self):
-        count = 10
+        count = 10000
         while count !=0:
             count=count-1
             time.sleep(self.config["delays"]["interrupt"])
         print("We have an interrupt, perhaps an hardware interrupt")
         self.killEvent.set()        # this point where we ask all the other threads to exit
         return 0
+
+
 
 def start_loops(config):
     '''Function to start all loops and also wait till all the loops are complete
@@ -76,13 +58,15 @@ def start_loops(config):
     try:
         killEvent  = threading.Event()          # this helps halt all other worker threads
         monitoring = SensingT(ke=killEvent,cfg=config)     # sensing thread
-        uplinking = UplinkingT(ke=killEvent,cfg=config)       # uploading to cloud thread
-        downlinking=DownlinkingT(ke=killEvent,cfg=config)     # downloading changes from the cloud
+        uplinking = cloudlink.UplinkingT(ke=killEvent,cfg=config)       # uploading to cloud thread
+        downlinking=cloudlink.DownlinkingT(ke=killEvent,cfg=config)     # downloading changes from the cloud
         interrupt  = InterruptT(ke=killEvent,cfg=config)      # this runs till there is an h/w interrupt
         monitoring.start()
         uplinking.start()
         downlinking.start()
         interrupt.start()
+        if schedules.sched !=None:
+            schedules.sched.start()
         # joining all threads
         monitoring.join()
         uplinking.join()
