@@ -86,9 +86,9 @@ The microprocessor here acts more like a state machine, controlling the state of
 We are currently exploring the availability of thermo probe that can work well with RPi 3B+
 
 
-|Device|00:00-06:00|06:00-08:00|08:00-12:00|12:00-18:00|18:00-19:00|19:00-00:00|
-|-----|-----|-----|-----|-----|-----|----|
-|Filter|ON|OFF|OFF|OFF|OFF|OFF|
-|Air pump|OFF|ON|ON|OFF|OFF|ON|
-|LED|OFF|ON|OFF|OFF|ON|ON|
-|Feeder|OFF|OFF|OFF|OFF|ON|OFF|
+|Device|00:00-06:00|06:00-08:00|08:00-12:00|12:00-18:00|18:00-19:00|19:00-00:00|ON HRS|
+|-----|-----|-----|-----|-----|-----|----|----|
+|Filter|ON|OFF|OFF|OFF|OFF|OFF|06|
+|Air pump|OFF|ON|ON|OFF|OFF|ON|11|
+|LED|OFF|ON|OFF|OFF|ON|ON|10|
+|Feeder|OFF|OFF|OFF|OFF|ON|OFF|01|
