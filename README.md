@@ -46,9 +46,49 @@ Air pump cannot run in the dark time, as we want the creatures to rest and have 
 
 We also need the water filter to be `OFF` when its feeding time. We have observed that leftover fishfood is then caught in the filter if it coincides.Typical comfortable schedule would be a hour after the food is suppled the filter can be set in `ON` state.
 
-|Time of the day|Total hours |State|
+|Time of the day|Total hours |State|Remarks|
 |-----|-----|-----|
-|00:00-06:00|06|ON|
-|06:00-12:00|06|OFF|
-|12:00-18:00|06|ON|
-|18:00-00:00|06|OFF|
+|00:00-06:00|06|ON|Night time is the best time to filter, and also provide backup 02 just in case|
+|06:00-12:00|06|OFF|No simultaneous run for filter and air pump|
+|12:00-18:00|06|OFF|Everything is put off, maybe the feeder can be started here|
+|18:00-00:00|06|OFF|Again we have air-pump on here|
+
+> Experiment done on 24-APRIL-2018: confirms that running the filter for only 6hrs in the night can actually be beneficial. It has cleanses the water considerably while supporting the water body with oxygen contents just in case of depletion.
+
+#### Scheduling the air pump :
+
+Air pump and the water filter work at complimentary times. We don't want the air pump and the water filter working on coincident schedules.
+
+|Time of the day|Total hours |State|Remarks|
+|-----|-----|-----|-----|
+|00:00-06:00|06|OFF|No coincidence with filter|
+|06:00-12:00|06|ON|This puts the water body in high 02 levels|
+|12:00-18:00|06|OFF|Only the LED light working here|
+|18:00-00:00|06|ON|Just after the feed we have the air pump prepping for night time|
+
+Air pump is proposed to work total of 12 hours/ day.
+
+#### Scheduling the LED illumination :
+
+|Time of the day|Total hours |State|Remarks|
+|-----|-----|-----|
+|00:00-06:00|06|OFF|No illumination required during this slot|
+|06:00-08:00|02|ON|Illumination here is good for plant growth and also good for decoration|
+|08:00-18:00|10|OFF|No need for illumination during the day|
+|18:00-00:00|06|ON|Required illumination for evening time|
+
+- Notice the total ON time accounts for 08 Hours
+
+#### Complete scheduling of the devices
+---
+The microprocessor here acts more like a state machine, controlling the state of various devices assisting the aquarium against the time of the day. We are not illustrating the heater cycle since that is dependent on the actual water temperature and such cannot be based on timeline.
+
+We are currently exploring the availability of thermo probe that can work well with RPi 3B+
+
+
+|Device|00:00-06:00|06:00-08:00|08:00-12:00|12:00-18:00|18:00-19:00|19:00-00:00|
+|-----|-----|-----|-----|-----|-----|
+|Filter|ON|OFF|OFF|OFF|OFF|OFF|
+|Air pump|OFF|ON|ON|OFF|OFF|ON|
+|LED|OFF|ON|OFF|OFF|ON|ON|
+|Feeder|OFF|OFF|OFF|ON|OFF|ON|
