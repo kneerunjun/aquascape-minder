@@ -47,7 +47,7 @@ Air pump cannot run in the dark time, as we want the creatures to rest and have 
 We also need the water filter to be `OFF` when its feeding time. We have observed that leftover fishfood is then caught in the filter if it coincides.Typical comfortable schedule would be a hour after the food is suppled the filter can be set in `ON` state.
 
 |Time of the day|Total hours |State|Remarks|
-|-----|-----|-----|
+|-----|-----|-----|----|
 |00:00-06:00|06|ON|Night time is the best time to filter, and also provide backup 02 just in case|
 |06:00-12:00|06|OFF|No simultaneous run for filter and air pump|
 |12:00-18:00|06|OFF|Everything is put off, maybe the feeder can be started here|
