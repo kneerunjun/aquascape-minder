@@ -10,8 +10,8 @@ Features of the end product :
 |Parameter|Description|Control & Actuation|Rule|
 |----|----|----|----|
 |Illumination|LED illumination helps healthy foliage growth  in the tank, and provides embellishment|LED tube , A/C controlled from a D/C switch relay|Minimum of 06 hrs ON state|
-|Temperature|For marine creatures we are working with are all tropical creatures, the temperature of the water is preferred between 24oC to 27oC||
-|Aeration|||
+|Temperature|For marine creatures we are working with are all tropical creatures|A/C water heater controlled from D/C relay|the temperature of the water is preferred between 24oC to 27oC|
+|Aeration|Air pump is used to circulate air into the water body|A/C air pump|Atleast 5hours of ON time|
 |Filtration|||
 |pH levels|||
 |Feeder|||
