@@ -71,7 +71,7 @@ Air pump is proposed to work total of 12 hours/ day.
 #### Scheduling the LED illumination :
 
 |Time of the day|Total hours |State|Remarks|
-|-----|-----|-----|
+|-----|-----|-----|-----|
 |00:00-06:00|06|OFF|No illumination required during this slot|
 |06:00-08:00|02|ON|Illumination here is good for plant growth and also good for decoration|
 |08:00-18:00|10|OFF|No need for illumination during the day|
@@ -87,7 +87,7 @@ We are currently exploring the availability of thermo probe that can work well w
 
 
 |Device|00:00-06:00|06:00-08:00|08:00-12:00|12:00-18:00|18:00-19:00|19:00-00:00|
-|-----|-----|-----|-----|-----|-----|
+|-----|-----|-----|-----|-----|-----|----|
 |Filter|ON|OFF|OFF|OFF|OFF|OFF|
 |Air pump|OFF|ON|ON|OFF|OFF|ON|
 |LED|OFF|ON|OFF|OFF|ON|ON|
