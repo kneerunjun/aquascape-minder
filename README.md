@@ -27,12 +27,12 @@ Features of the end product :
 
 #### Type marine life :
 
-| Creature            | Nos             | Sensitive to  |
+| Creature            | Nos             | About  |
 | -------------       |:-------------:  | -----:|
-| Neon Tetra          | 12              |       |
-| Golden sucker fish  | 2               |       |
-| Turtles             | 1               |       |
-| Silver shark        | 5               |       |
+| Neon Tetra          | 12              |  [More](https://www.fishlore.com/Profiles-NeonTetra.htm)     |
+| Golden algae eater  | 2               | [More](https://www.aquariumdomain.com/adSocial/index.php/golden-chinese-algae-eater/)      |
+| Turtles             | 1               | [More](http://animal-world.com/encyclo/reptiles/turtles/RingedMapTurtle.php)      |
+| Serphae Tetra       | 11              |[More](https://www.fishlore.com/Profiles-SerpaeTetra.htm)        |
 
 We are training the electronics on diverse marine life. All life have different sensitivity areas. This would let us monitor the effect upon failure of the system.
 
@@ -105,7 +105,6 @@ We are currently exploring the availability of thermo probe that can work well w
 
 
 ### Domain references
-----
 
 1. [Aquarium temperatures](https://www.thesprucepets.com/aquarium-water-temperature-1381896)
 <sub><sup>So what is the best temperature for your fish? It depends on the species, but in general, tropical fish are most healthy in the range of 75-80°F (24-27°C). Cold water fish do better in temperatures well below that, some of them enjoy water well below 70°F, which is not suitable for any tropical fish.Ultimately the best temperature will depend on the species of fish in the aquarium. Research the fish you are interested in keeping before setting up an aquarium, and only chose those that have similar needs. Use a dependable heater, thermometer, and check the water temperature regularly to ensure frequent or large temperature changes don't occur.</sup><sub>
