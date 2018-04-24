@@ -91,4 +91,4 @@ We are currently exploring the availability of thermo probe that can work well w
 |Filter|ON|OFF|OFF|OFF|OFF|OFF|
 |Air pump|OFF|ON|ON|OFF|OFF|ON|
 |LED|OFF|ON|OFF|OFF|ON|ON|
-|Feeder|OFF|OFF|OFF|ON|OFF|ON|
+|Feeder|OFF|OFF|OFF|ON|ON|OFF|
