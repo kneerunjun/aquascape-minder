@@ -1,9 +1,16 @@
 #!/usr/bin/python3
-import time, pdb,json,sys, threading
+import time, pdb,json,sys, threading, logging
 from collections import namedtuple
 from queue import Queue
-
 import cloudlink, schedules
+
+
+logging.basicConfig(filename="aqsm.log",
+                    filemode='a',
+                    format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+                    datefmt='%H:%M:%S',
+                    level=logging.DEBUG)
+
 
 def error_log(message):
     pass
@@ -81,6 +88,7 @@ def start_loops(config):
         return 1                                # so that the main function knows it has error on exit
 # ref :https://stackoverflow.com/questions/419163/what-does-if-name-main-do#419185
 if __name__ == "__main__":
+    logging.info("aqsm.device.minder :Running Aquascape minder")
     try:
         config =config_from_json()              # loads the configuration from a json file
         if(check_configure(config)==True):      # ascertaining if the configuration is correct
