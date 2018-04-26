@@ -1,6 +1,30 @@
 {
   "settings":{
     "crons":{
+      "riseandshine":{
+        "hours":"6-11", "minutes":"0-59"
+      },
+      "middaycalm":{
+        "hours":"12-14", "minutes":"0-59"
+      },
+      "lateafternoon":{
+        "hours":"15-17", "minutes":"0-59"
+      },
+      "twilight":{
+        "hours":"18", "minutes":"0-59"
+      },
+      "supper":{
+        "hours":"19", "minutes":"0-59"
+      },
+      "night":{
+        "hours":"20-21", "minutes":"0-59"
+      },
+      "midnight":{
+        "hours":"22-23", "minutes":"0-59"
+      },
+      "darknight":{
+        "hours":"0-5", "minutes":"0-59"
+      },
       "led":{
         "on":{"hours":"6-7,18-23", "minutes":"0-59"},
         "off":{"hours":"8-17,0-5","minutes":"0-59"}
