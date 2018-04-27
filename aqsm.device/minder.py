@@ -57,20 +57,20 @@ def start_loops(config):
     '''
     try:
         killEvent  = threading.Event()          # this helps halt all other worker threads
-        monitoring = SensingT(ke=killEvent,cfg=config)     # sensing thread
-        uplinking = cloudlink.UplinkingT(ke=killEvent,cfg=config)       # uploading to cloud thread
-        downlinking=cloudlink.DownlinkingT(ke=killEvent,cfg=config)     # downloading changes from the cloud
+        # monitoring = SensingT(ke=killEvent,cfg=config)     # sensing thread
+        # uplinking = cloudlink.UplinkingT(ke=killEvent,cfg=config)       # uploading to cloud thread
+        # downlinking=cloudlink.DownlinkingT(ke=killEvent,cfg=config)     # downloading changes from the cloud
         interrupt  = InterruptT(ke=killEvent,cfg=config)      # this runs till there is an h/w interrupt
-        monitoring.start()
-        uplinking.start()
-        downlinking.start()
+        # monitoring.start()
+        # uplinking.start()
+        # downlinking.start()
         interrupt.start()
         if schedules.sched !=None:
             schedules.sched.start()
         # joining all threads
-        monitoring.join()
-        uplinking.join()
-        downlinking.join()
+        # monitoring.join()
+        # uplinking.join()
+        # downlinking.join()
         interrupt.join()
         # join the threaded loops here..
         print("Exiting looping sequence..")

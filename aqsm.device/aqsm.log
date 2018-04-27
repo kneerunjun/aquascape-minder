@@ -1,118 +1,18 @@
-15:36:55,374 root INFO aqsm.device.minder :Running Aquascape minder
-15:36:55,378 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
-15:36:55,380 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
-15:36:55,381 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
-15:36:55,382 apscheduler.scheduler INFO Added job "twilight" to job store "default"
-15:36:55,383 apscheduler.scheduler INFO Added job "supper" to job store "default"
-15:36:55,384 apscheduler.scheduler INFO Added job "night" to job store "default"
-15:36:55,385 apscheduler.scheduler INFO Added job "midnight" to job store "default"
-15:36:55,386 apscheduler.scheduler INFO Added job "darknight" to job store "default"
-15:36:55,386 apscheduler.scheduler INFO Scheduler started
-15:36:55,387 apscheduler.scheduler DEBUG Looking for jobs to run
-15:36:55,388 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 15:37:00+05:30 (in 4.612130 seconds)
-15:37:00,1 apscheduler.scheduler DEBUG Looking for jobs to run
-15:37:00,4 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:37:00 IST)" (scheduled at 2018-04-27 15:37:00+05:30)
-15:37:00,7 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 15:38:00+05:30 (in 59.998036 seconds)
-15:37:00,9 root INFO aqsm.schedules: The Airpump was turned ON
-15:37:00,10 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:38:00 IST)" executed successfully
-15:46:08,993 root INFO aqsm.device.minder :Running Aquascape minder
-15:47:16,154 root INFO aqsm.device.minder :Running Aquascape minder
-15:49:24,17 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
-15:49:24,19 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
-15:49:24,20 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
-15:49:24,21 apscheduler.scheduler INFO Added job "twilight" to job store "default"
-15:49:24,22 apscheduler.scheduler INFO Added job "supper" to job store "default"
-15:49:24,23 apscheduler.scheduler INFO Added job "night" to job store "default"
-15:49:24,24 apscheduler.scheduler INFO Added job "midnight" to job store "default"
-15:49:24,25 apscheduler.scheduler INFO Added job "darknight" to job store "default"
-15:49:24,26 apscheduler.scheduler INFO Scheduler started
-15:49:24,26 apscheduler.scheduler DEBUG Looking for jobs to run
-15:49:24,27 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 15:50:00+05:30 (in 35.972645 seconds)
-15:50:00,0 apscheduler.scheduler DEBUG Looking for jobs to run
-15:50:00,3 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:50:00 IST)" (scheduled at 2018-04-27 15:50:00+05:30)
-15:50:00,4 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 15:51:00+05:30 (in 59.998474 seconds)
-15:50:00,5 root INFO aqsm.schedules: The Airpump was turned ON
-15:50:00,6 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:51:00 IST)" executed successfully
-15:51:00,4 apscheduler.scheduler DEBUG Looking for jobs to run
-15:51:00,6 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:51:00 IST)" (scheduled at 2018-04-27 15:51:00+05:30)
-15:51:00,7 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:51:00 IST)" executed successfully
-15:51:00,9 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 15:52:00+05:30 (in 59.994698 seconds)
-15:52:51,653 root INFO aqsm.device.minder :Running Aquascape minder
-15:52:51,657 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
-15:52:51,659 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
-15:52:51,660 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
-15:52:51,661 apscheduler.scheduler INFO Added job "twilight" to job store "default"
-15:52:51,662 apscheduler.scheduler INFO Added job "supper" to job store "default"
-15:52:51,663 apscheduler.scheduler INFO Added job "night" to job store "default"
-15:52:51,664 apscheduler.scheduler INFO Added job "midnight" to job store "default"
-15:52:51,665 apscheduler.scheduler INFO Added job "darknight" to job store "default"
-15:52:51,666 apscheduler.scheduler INFO Scheduler started
-15:52:51,667 apscheduler.scheduler DEBUG Looking for jobs to run
-15:52:51,667 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 15:53:00+05:30 (in 8.332619 seconds)
-15:53:00,0 apscheduler.scheduler DEBUG Looking for jobs to run
-15:53:00,3 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:53:00 IST)" (scheduled at 2018-04-27 15:53:00+05:30)
-15:53:00,4 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 15:54:00+05:30 (in 59.998532 seconds)
-15:53:00,5 root INFO aqsm.schedules: The LED was turned OFF
-15:53:00,5 root INFO aqsm.schedules: The Airpump was turned ON
-15:53:00,6 root INFO aqsm.schedules: The filter was turned OFF
-15:53:00,6 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:54:00 IST)" executed successfully
-15:54:00,4 apscheduler.scheduler DEBUG Looking for jobs to run
-15:54:00,6 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:54:00 IST)" (scheduled at 2018-04-27 15:54:00+05:30)
-15:54:00,7 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:54:00 IST)" executed successfully
-15:54:00,9 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 15:55:00+05:30 (in 59.995023 seconds)
-15:55:00,4 apscheduler.scheduler DEBUG Looking for jobs to run
-15:55:00,6 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:55:00 IST)" (scheduled at 2018-04-27 15:55:00+05:30)
-15:55:00,7 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:55:00 IST)" executed successfully
-15:55:00,9 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 15:56:00+05:30 (in 59.994517 seconds)
-15:56:00,4 apscheduler.scheduler DEBUG Looking for jobs to run
-15:56:00,8 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:56:00 IST)" (scheduled at 2018-04-27 15:56:00+05:30)
-15:56:00,9 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:56:00 IST)" executed successfully
-15:56:00,12 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 15:57:00+05:30 (in 59.994236 seconds)
-15:57:00,8 apscheduler.scheduler DEBUG Looking for jobs to run
-15:57:00,11 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:57:00 IST)" (scheduled at 2018-04-27 15:57:00+05:30)
-15:57:00,13 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:57:00 IST)" executed successfully
-15:57:00,16 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 15:58:00+05:30 (in 59.991223 seconds)
-15:58:00,8 apscheduler.scheduler DEBUG Looking for jobs to run
-15:58:00,12 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:58:00 IST)" (scheduled at 2018-04-27 15:58:00+05:30)
-15:58:00,13 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:58:00 IST)" executed successfully
-15:58:00,16 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 15:59:00+05:30 (in 59.990456 seconds)
-15:59:00,8 apscheduler.scheduler DEBUG Looking for jobs to run
-15:59:00,10 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:59:00 IST)" (scheduled at 2018-04-27 15:59:00+05:30)
-15:59:00,11 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 15:59:00 IST)" executed successfully
-15:59:00,12 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 16:00:00+05:30 (in 59.991340 seconds)
-16:00:00,5 apscheduler.scheduler DEBUG Looking for jobs to run
-16:00:00,8 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:00:00 IST)" (scheduled at 2018-04-27 16:00:00+05:30)
-16:00:00,9 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:00:00 IST)" executed successfully
-16:00:00,12 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 16:01:00+05:30 (in 59.994171 seconds)
-16:01:00,8 apscheduler.scheduler DEBUG Looking for jobs to run
-16:01:00,11 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:01:00 IST)" (scheduled at 2018-04-27 16:01:00+05:30)
-16:01:00,12 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:01:00 IST)" executed successfully
-16:01:00,16 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 16:02:00+05:30 (in 59.990892 seconds)
-16:02:00,8 apscheduler.scheduler DEBUG Looking for jobs to run
-16:02:00,11 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:02:00 IST)" (scheduled at 2018-04-27 16:02:00+05:30)
-16:02:00,13 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:02:00 IST)" executed successfully
-16:02:00,15 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 16:03:00+05:30 (in 59.990955 seconds)
-16:03:00,8 apscheduler.scheduler DEBUG Looking for jobs to run
-16:03:00,12 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 16:04:00+05:30 (in 59.990857 seconds)
-16:03:00,13 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:04:00 IST)" (scheduled at 2018-04-27 16:03:00+05:30)
-16:03:00,14 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:04:00 IST)" executed successfully
-16:04:00,4 apscheduler.scheduler DEBUG Looking for jobs to run
-16:04:00,8 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 16:05:00+05:30 (in 59.994309 seconds)
-16:04:00,9 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:05:00 IST)" (scheduled at 2018-04-27 16:04:00+05:30)
-16:04:00,11 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:05:00 IST)" executed successfully
-16:05:00,4 apscheduler.scheduler DEBUG Looking for jobs to run
-16:05:00,8 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 16:06:00+05:30 (in 59.994386 seconds)
-16:05:00,9 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:06:00 IST)" (scheduled at 2018-04-27 16:05:00+05:30)
-16:05:00,11 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:06:00 IST)" executed successfully
-16:06:00,4 apscheduler.scheduler DEBUG Looking for jobs to run
-16:06:00,8 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 16:07:00+05:30 (in 59.994374 seconds)
-16:06:00,9 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:07:00 IST)" (scheduled at 2018-04-27 16:06:00+05:30)
-16:06:00,11 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:07:00 IST)" executed successfully
-16:07:00,4 apscheduler.scheduler DEBUG Looking for jobs to run
-16:07:00,8 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 16:08:00+05:30 (in 59.994339 seconds)
-16:07:00,9 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:08:00 IST)" (scheduled at 2018-04-27 16:07:00+05:30)
-16:07:00,11 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:08:00 IST)" executed successfully
-16:08:00,4 apscheduler.scheduler DEBUG Looking for jobs to run
-16:08:00,8 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 16:09:00+05:30 (in 59.994318 seconds)
-16:08:00,9 apscheduler.executors.default INFO Running job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:09:00 IST)" (scheduled at 2018-04-27 16:08:00+05:30)
-16:08:00,11 apscheduler.executors.default INFO Job "late_after_noon (trigger: cron[hour='15-17', minute='0-59'], next run at: 2018-04-27 16:09:00 IST)" executed successfully
+19:53:49,914 root INFO aqsm.device.minder :Running Aquascape minder
+19:53:49,925 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+19:53:49,926 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+19:53:49,928 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+19:53:49,929 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+19:53:49,930 apscheduler.scheduler INFO Added job "supper" to job store "default"
+19:53:49,931 apscheduler.scheduler INFO Added job "night" to job store "default"
+19:53:49,932 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+19:53:49,933 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+19:53:49,934 apscheduler.scheduler INFO Scheduler started
+19:53:49,934 apscheduler.scheduler DEBUG Looking for jobs to run
+19:53:49,935 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 19:54:00+05:30 (in 10.064642 seconds)
+19:54:00,1 apscheduler.scheduler DEBUG Looking for jobs to run
+19:54:00,4 apscheduler.executors.default INFO Running job "supper (trigger: cron[hour='19', minute='0-59'], next run at: 2018-04-27 19:54:00 IST)" (scheduled at 2018-04-27 19:54:00+05:30)
+19:54:00,7 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-27 19:55:00+05:30 (in 59.998036 seconds)
+19:54:00,8 root INFO aqsm.schedules: The LED was turned ON
+19:54:00,9 root INFO aqsm.schedules: The feeder was turned ON
+19:54:00,10 apscheduler.executors.default INFO Job "supper (trigger: cron[hour='19', minute='0-59'], next run at: 2018-04-27 19:55:00 IST)" executed successfully
