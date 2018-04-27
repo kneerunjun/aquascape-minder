@@ -3,7 +3,7 @@
 #   development         :24-APRIL-2018
 #   purpose             :This helps setting up the cron jobs for the tank assiting tasks
 from apscheduler.schedulers.background import BackgroundScheduler
-import json, sys, datetime, pdb,
+import json, sys, datetime, pdb, hardware, logging
 
 try:
     with open('./settings.json') as data_file:
@@ -25,9 +25,6 @@ night = settings["crons"]["night"]
 midnight = settings["crons"]["midnight"]
 darknight = settings["crons"]["darknight"]
 
-
-hardware.init()         # we are expecting the hardware GPIO to get initialized here
-# follwing are all the schedules that would be cronned into the system
 
 @sched.scheduled_job('cron', hour=riseandshine["hours"], minute=riseandshine["minutes"], timezone="Asia/Kolkata")
 def rise_and_shine():
@@ -104,20 +101,20 @@ def late_after_noon():
     FILTER  :   OFF
     FEEDER  :   OFF - this can be thought out if we need to trigger and leave it to feed the requisite amount
     '''
-    if  hardware.led_status()==1:
-        ok =hardware.turn_off_led()
+    if  hardware.led_status()==0:
+        ok =hardware.turn_on_led()
         if ok ==0:
             logging.info("aqsm.schedules: The LED was turned OFF")
         else:
             logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED OFF")
-    if  hardware.airpump_status()==1:
-        ok =hardware.turn_off_airpump()
+    if  hardware.airpump_status()==0:
+        ok =hardware.turn_on_airpump()
         if ok ==0:
-            logging.info("aqsm.schedules: The Airpump was turned OFF")
+            logging.info("aqsm.schedules: The Airpump was turned ON")
         else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump OFF")
-    if  hardware.filter_status()==1:
-        ok =hardware.turn_off_filter()
+            logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump ON")
+    if  hardware.filter_status()==0:
+        ok =hardware.turn_on_filter()
         if ok ==0:
             logging.info("aqsm.schedules: The filter was turned OFF")
         else:

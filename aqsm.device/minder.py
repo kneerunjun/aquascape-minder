@@ -1,17 +1,14 @@
 #!/usr/bin/python3
-import time, pdb,json,sys, threading, logging
+import time, pdb,json,sys, threading, logging, hardware, subprocess
 from collections import namedtuple
 from queue import Queue
 import cloudlink, schedules
-
 
 logging.basicConfig(filename="aqsm.log",
                     filemode='a',
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                     datefmt='%H:%M:%S',
                     level=logging.DEBUG)
-
-
 def error_log(message):
     pass
     print(message)
@@ -37,7 +34,6 @@ class SensingT(threading.Thread):
         while not self.killEvent.wait(1):
             print("Monitoring now..")
             time.sleep(self.config["delays"]["sensing"])
-
 class InterruptT(threading.Thread):
     '''Worker thread that waits in anticipation of any hardware interrupt.
     Upon an interrupt this would trigger an event that in turn requests all threads to exit
@@ -54,9 +50,6 @@ class InterruptT(threading.Thread):
         print("We have an interrupt, perhaps an hardware interrupt")
         self.killEvent.set()        # this point where we ask all the other threads to exit
         return 0
-
-
-
 def start_loops(config):
     '''Function to start all loops and also wait till all the loops are complete
     This returns 0 /1 back to the main function so that system level exit can be enabled
@@ -89,17 +82,24 @@ def start_loops(config):
 # ref :https://stackoverflow.com/questions/419163/what-does-if-name-main-do#419185
 if __name__ == "__main__":
     logging.info("aqsm.device.minder :Running Aquascape minder")
+    # subprocess.call(["./setsysdatefromweb.sh"])
     try:
+        hardware.init()
         config =config_from_json()              # loads the configuration from a json file
         if(check_configure(config)==True):      # ascertaining if the configuration is correct
-            sys.exit(start_loops(config))       # we are to spin out all the tasks here
+            ok =start_loops(config)
+            hardware.flush()
+            sys.exit(ok)       # we are to spin out all the tasks here
         else:
             error_log("Invalid configuration")  # config read , but invalid
+            hardware.flush()
             sys.exit(1)
     except (KeyboardInterrupt, SystemExit):
         # this is when the user is trying to force stop the entire execution
         print("Exiting out from minder.py")
+        hardware.flush()
         sys.exit(1)
     except Exception as e:
         print(str(e))
+        hardware.flush()
         error_log("Failed to read any configuration")
