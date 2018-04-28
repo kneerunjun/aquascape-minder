@@ -1,0 +1,136 @@
+09:18:52,944 root INFO aqsm.device.minder :Running Aquascape minder
+09:18:52,946 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+09:18:52,948 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+09:18:52,949 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+09:18:52,950 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+09:18:52,951 apscheduler.scheduler INFO Added job "supper" to job store "default"
+09:18:52,952 apscheduler.scheduler INFO Added job "night" to job store "default"
+09:18:52,953 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+09:18:52,954 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+09:18:52,954 apscheduler.scheduler INFO Scheduler started
+09:18:52,955 apscheduler.scheduler DEBUG Looking for jobs to run
+09:18:52,956 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-28 09:19:00+05:30 (in 7.043605 seconds)
+09:19:09,900 root INFO aqsm.device.minder :Running Aquascape minder
+09:19:09,902 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+09:19:09,904 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+09:19:09,905 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+09:19:09,906 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+09:19:09,907 apscheduler.scheduler INFO Added job "supper" to job store "default"
+09:19:09,908 apscheduler.scheduler INFO Added job "night" to job store "default"
+09:19:09,909 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+09:19:09,910 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+09:19:09,911 apscheduler.scheduler INFO Scheduler started
+09:19:09,911 apscheduler.scheduler DEBUG Looking for jobs to run
+09:19:09,912 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-28 09:20:00+05:30 (in 50.087692 seconds)
+09:19:21,912 root INFO We are now exiting minder.py
+09:20:05,465 root INFO aqsm.device.minder :Running Aquascape minder
+09:20:05,468 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+09:20:05,469 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+09:20:05,470 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+09:20:05,471 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+09:20:05,472 apscheduler.scheduler INFO Added job "supper" to job store "default"
+09:20:05,473 apscheduler.scheduler INFO Added job "night" to job store "default"
+09:20:05,474 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+09:20:05,475 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+09:20:05,476 apscheduler.scheduler INFO Scheduler started
+09:20:05,476 apscheduler.scheduler DEBUG Looking for jobs to run
+09:20:05,477 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-28 09:21:00+05:30 (in 54.522661 seconds)
+09:20:09,334 root INFO We are now exiting minder.py
+09:20:22,4 root INFO aqsm.device.minder :Running Aquascape minder
+09:20:22,15 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+09:20:22,16 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+09:20:22,17 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+09:20:22,18 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+09:20:22,20 apscheduler.scheduler INFO Added job "supper" to job store "default"
+09:20:22,21 apscheduler.scheduler INFO Added job "night" to job store "default"
+09:20:22,22 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+09:20:22,23 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+09:20:22,23 apscheduler.scheduler INFO Scheduler started
+09:20:22,24 apscheduler.scheduler DEBUG Looking for jobs to run
+09:20:22,24 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-28 09:21:00+05:30 (in 37.975352 seconds)
+09:20:25,16 root INFO We are now exiting minder.py
+09:24:35,906 root INFO aqsm.device.minder :Running Aquascape minder
+09:24:35,909 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+09:24:35,911 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+09:24:35,912 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+09:24:35,913 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+09:24:35,914 apscheduler.scheduler INFO Added job "supper" to job store "default"
+09:24:35,915 apscheduler.scheduler INFO Added job "night" to job store "default"
+09:24:35,916 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+09:24:35,917 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+09:24:35,918 apscheduler.scheduler INFO Scheduler started
+09:24:35,918 apscheduler.scheduler DEBUG Looking for jobs to run
+09:24:35,919 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-28 09:25:00+05:30 (in 24.080741 seconds)
+09:24:42,834 root INFO We are now exiting minder.py
+09:27:53,104 root INFO aqsm.device.minder :Running Aquascape minder
+09:27:53,106 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+09:27:53,108 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+09:27:53,109 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+09:27:53,110 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+09:27:53,111 apscheduler.scheduler INFO Added job "supper" to job store "default"
+09:27:53,112 apscheduler.scheduler INFO Added job "night" to job store "default"
+09:27:53,113 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+09:27:53,114 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+09:27:53,115 apscheduler.scheduler INFO Scheduler started
+09:27:53,116 apscheduler.scheduler DEBUG Looking for jobs to run
+09:27:53,116 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-28 09:28:00+05:30 (in 6.883537 seconds)
+09:27:55,304 root INFO We are now exiting minder.py
+09:29:02,451 root INFO aqsm.device.minder :Running Aquascape minder
+09:29:02,453 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+09:29:02,455 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+09:29:02,456 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+09:29:02,457 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+09:29:02,458 apscheduler.scheduler INFO Added job "supper" to job store "default"
+09:29:02,459 apscheduler.scheduler INFO Added job "night" to job store "default"
+09:29:02,460 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+09:29:02,461 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+09:29:02,462 apscheduler.scheduler INFO Scheduler started
+09:29:02,462 apscheduler.scheduler DEBUG Looking for jobs to run
+09:29:02,464 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-28 09:30:00+05:30 (in 57.536353 seconds)
+09:29:07,117 root INFO We are now exiting minder.py
+09:29:55,588 root INFO aqsm.device.minder :Running Aquascape minder
+09:29:55,591 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+09:29:55,592 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+09:29:55,593 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+09:29:55,594 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+09:29:55,595 apscheduler.scheduler INFO Added job "supper" to job store "default"
+09:29:55,596 apscheduler.scheduler INFO Added job "night" to job store "default"
+09:29:55,597 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+09:29:55,598 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+09:29:55,599 apscheduler.scheduler INFO Scheduler started
+09:29:55,599 apscheduler.scheduler DEBUG Looking for jobs to run
+09:29:55,601 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-28 09:30:00+05:30 (in 4.399329 seconds)
+09:30:00,1 apscheduler.scheduler DEBUG Looking for jobs to run
+09:30:00,4 apscheduler.executors.default INFO Running job "rise_and_shine (trigger: cron[hour='6-11', minute='0-59'], next run at: 2018-04-28 09:30:00 IST)" (scheduled at 2018-04-28 09:30:00+05:30)
+09:30:00,7 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-28 09:31:00+05:30 (in 59.997954 seconds)
+09:30:00,8 root INFO aqsm.schedules: The LED was turned ON
+09:30:00,9 root INFO aqsm.schedules: The Airpump was turned ON
+09:30:00,10 apscheduler.executors.default INFO Job "rise_and_shine (trigger: cron[hour='6-11', minute='0-59'], next run at: 2018-04-28 09:31:00 IST)" executed successfully
+09:30:48,40 root INFO aqsm.device.minder :Running Aquascape minder
+09:31:01,294 root INFO aqsm.device.minder :Running Aquascape minder
+09:31:01,297 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+09:31:01,299 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+09:31:01,300 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+09:31:01,302 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+09:31:01,303 apscheduler.scheduler INFO Added job "supper" to job store "default"
+09:31:01,304 apscheduler.scheduler INFO Added job "night" to job store "default"
+09:31:01,305 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+09:31:01,306 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+09:31:01,307 apscheduler.scheduler INFO Scheduler started
+09:31:01,308 apscheduler.scheduler DEBUG Looking for jobs to run
+09:31:01,308 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-28 09:32:00+05:30 (in 58.691557 seconds)
+09:33:45,693 root INFO aqsm.device.minder :Running Aquascape minder
+09:33:45,695 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+09:33:45,697 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+09:33:45,698 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+09:33:45,699 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+09:33:45,700 apscheduler.scheduler INFO Added job "supper" to job store "default"
+09:33:45,701 apscheduler.scheduler INFO Added job "night" to job store "default"
+09:33:45,702 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+09:33:45,703 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+09:33:45,704 apscheduler.scheduler INFO Scheduler started
+09:33:45,704 apscheduler.scheduler DEBUG Looking for jobs to run
+09:33:45,705 apscheduler.scheduler DEBUG Next wakeup is due at 2018-04-28 09:34:00+05:30 (in 14.294635 seconds)
+09:33:51,506 apscheduler.scheduler INFO Scheduler has been shut down
+09:33:51,507 apscheduler.scheduler DEBUG Looking for jobs to run
+09:33:51,507 apscheduler.scheduler DEBUG No jobs; waiting until a job is added
