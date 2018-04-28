@@ -54,7 +54,6 @@ class Interruption(Exception):
     pass
 class GracefulExit():
     def __init__(self, *args, **kwargs):
-        self.killEvent  = kwargs["ke"]
         signal.signal(signal.SIGINT, self.upon_signal)
         signal.signal(signal.SIGTERM, self.upon_signal)
         signal.signal(signal.SIGHUP, self.upon_signal)
@@ -68,7 +67,7 @@ if __name__ == "__main__":
         config =config_from_json()              # loads the configuration from a json file
         hardware.init()
         killEvent  = threading.Event()
-        gExit  = GracefulExit(ke=killEvent)
+        gExit  = GracefulExit()
         sensing = SensingT(ke=killEvent,cfg=config)
         sensing.start()
         if schedules.sched !=None:
