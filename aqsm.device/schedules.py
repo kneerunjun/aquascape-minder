@@ -6,7 +6,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import json, sys, datetime, pdb, hardware, logging
 
 try:
-    with open('./settings.json') as data_file:
+    with open('/home/pi/src/aquascape-minder/aqsm.device/settings.json') as data_file:
         settings = json.load(data_file)
         settings = settings["settings"]
 except FileNotFoundError as fe:
