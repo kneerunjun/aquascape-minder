@@ -16,3 +16,7 @@ All the enlisted are tropical life and tolerate a temperature of about 21<sup>o<
 While aquarists would argue that this is not much of a task switching off / on certain accessories of the aquariums at any time during the day, automation systems allow you a chance to monitor higher parameters taking control of the drudgery of keeping a schedule clock of the aquarium. One may realize how vital this is when away from the aquarium.
 
 > Don't you want someone to tend your aqua-pets while you are on your vacation ? Would you trust someone else's approximation of food and put the habits of your pets at stake ?
+
+- __One__ is , it leaves the repetitive precision controlled tasks to the microprocessor (RPi in this case) and sets you free from having to keep a track of the sensitive schedule. You can leave your home WiFi ON and this would mean the system smoothly controls all electrical equipment as per the schedule. Setting the schedule is also an one time activity from either your android or your desktop.
+
+- __Two__ is you have a remote handle / track of the electrical accessories and can even alter the schedule, force a restart on the system. Incase of emergency you can switch to manual mode and hijack control from the microprocessor. Casein - you know when to switch ON / OFF which accessory. Upon restart , the system then picks up internet local time and resumes the schedule from where it had left / crashed
