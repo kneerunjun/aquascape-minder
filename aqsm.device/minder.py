@@ -18,7 +18,8 @@ def config_from_json():
             "interrupt":1,
             "downlinking":5,
             "uplinking":2,
-            "sensing":2
+            "sensing":2,
+            "display":1
         }
     }
 def check_configure(config):
@@ -34,6 +35,7 @@ class SensingT(threading.Thread):
         while not self.killEvent.wait(1):
             print("Monitoring now..")
             time.sleep(self.config["delays"]["sensing"])
+        print("Now exiting the sensing")
 class InterruptT(threading.Thread):
     '''Worker thread that waits in anticipation of any hardware interrupt.
     Upon an interrupt this would trigger an event that in turn requests all threads to exit
@@ -50,9 +52,24 @@ class InterruptT(threading.Thread):
         print("We have an interrupt, perhaps an hardware interrupt")
         self.killEvent.set()        # this point where we ask all the other threads to exit
         return 0
+class UpdateDisplayT(threading.Thread):
+    '''This goes around in a loop updating the display lcd for the status of all the devices
+    This would also update the time
+    '''
+    def __init__(self,ke, cfg):
+        super(UpdateDisplayT,self).__init__()
+        self.killEvent  = ke
+        self.config = cfg
+    def run(self):
+        while not self.killEvent.wait(1):
+            hardware.display()
+            time.sleep(self.config["delays"]["display"])
+        print("Now exiting the display updating loop")
 class Interruption(Exception):
     pass
 class GracefulExit():
+    '''This helps in handling the system signals for the module and upon receving such signal would fire a custom Exception - which in turn signals any of program to quit and goto exception handling
+    '''
     def __init__(self, *args, **kwargs):
         signal.signal(signal.SIGINT, self.upon_signal)
         signal.signal(signal.SIGTERM, self.upon_signal)
@@ -62,21 +79,29 @@ class GracefulExit():
 # ref :https://stackoverflow.com/questions/419163/what-does-if-name-main-do#419185
 if __name__ == "__main__":
     try:
+        threaded_tasks =[]
         logging.info("aqsm.device.minder :Running Aquascape minder")
         # subprocess.call(["./setsysdatefromweb.sh"])
         config =config_from_json()              # loads the configuration from a json file
-        hardware.init()
+        hardware.init()                    # after init the function returns a handle to the lcd, so that we can use the same handle across threads
         killEvent  = threading.Event()
         gExit  = GracefulExit()
         sensing = SensingT(ke=killEvent,cfg=config)
+        displaying = UpdateDisplayT(ke=killEvent,cfg=config)
+        threaded_tasks.append(sensing)
+        threaded_tasks.append(displaying)
         sensing.start()
+        displaying.start()
         if schedules.sched !=None:
             schedules.sched.start()
         print("Running minder.py now!")
-        sensing.join()
+        for t in threaded_tasks:
+            t.join()
+        print("All the threaded tasks are now done!, Exiting")
+        sys.exit(0)
     except Interruption as interr:
         killEvent.set()
         schedules.sched.shutdown()
         hardware.flush()
         print("Exiting minder.py")
-        sys.exit(1)
+        sys.exit(0)

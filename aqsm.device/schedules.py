@@ -104,9 +104,9 @@ def late_after_noon():
     if  hardware.led_status()==0:
         ok =hardware.turn_on_led()
         if ok ==0:
-            logging.info("aqsm.schedules: The LED was turned OFF")
+            logging.info("aqsm.schedules: The LED was turned ON")
         else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED OFF")
+            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED ON")
     if  hardware.airpump_status()==0:
         ok =hardware.turn_on_airpump()
         if ok ==0:
@@ -114,7 +114,7 @@ def late_after_noon():
         else:
             logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump ON")
     if  hardware.filter_status()==0:
-        ok =hardware.turn_on_filter()
+        ok =hardware.turn_off_filter()
         if ok ==0:
             logging.info("aqsm.schedules: The filter was turned OFF")
         else:
