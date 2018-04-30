@@ -23,7 +23,7 @@ While aquarists would argue that this is not much of a task switching off / on c
 
 > Electronic system that helps you program a schedule for your aquarium and its electrical accessories, and keep a track of the same remotely. A time keeper for all the accessories maintaining optimal ON / OFF time
 
-#### Here is the outline of our solution
+### Outline of the solution
 
 
 
@@ -42,3 +42,12 @@ While aquarists would argue that this is not much of a task switching off / on c
 2. pH sensors - current cost restrictions are keeping us from doing this.
 3. Manual mode override : There are unforeseen events when you would want to hijack control from the system , interrupt the schedule and play various accessories at times other than scheduled.
 4. Settings changed on the cloud should force a restart of the services with the new setting.
+
+### Technology stack
+
+|Technology|Used for|Remarks|
+|----|----|----|
+|Raspberry Pi|Central microprocessor used for programmed controlling|RPi3B+ 2GB RAM|
+|Python software on RPi|Program running on the microprocessor helps to time and control everything|RPi3B+ 2GB RAM|
+|Cloud endpoints|HTTP REST cloud endpoints are the gateway for the microprocessor to store away settings and state. This is is what gets us the remoting capability|Cloud hosted HTTP services|
+|Web App|Responsive web application for devices of all aspect ratios |HTMLCSS web app that works on mobile as well on desktops|
