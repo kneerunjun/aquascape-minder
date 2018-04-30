@@ -40,3 +40,5 @@ While aquarists would argue that this is not much of a task switching off / on c
 
 1.  Temperature probe that helps keep a track of the water temperature and schedule the heater to maintain it comfortable for the tropical marine life.
 2. pH sensors - current cost restrictions are keeping us from doing this.
+3. Manual mode override : There are unforeseen events when you would want to hijack control from the system , interrupt the schedule and play various accessories at times other than scheduled.
+4. Settings changed on the cloud should force a restart of the services with the new setting.
