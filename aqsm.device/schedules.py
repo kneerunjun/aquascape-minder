@@ -97,23 +97,23 @@ def mid_day_calm():
 def late_after_noon():
     '''After some de-stressing we can resume the airpump , and let the led be off
     LED     :   OFF
-    AIRPUMP :   OFF
+    AIRPUMP :   ON
     FILTER  :   OFF
     FEEDER  :   OFF - this can be thought out if we need to trigger and leave it to feed the requisite amount
     '''
-    if  hardware.led_status()==0:
-        ok =hardware.turn_on_led()
+    if  hardware.led_status()==1:
+        ok =hardware.turn_off_led()
         if ok ==0:
-            logging.info("aqsm.schedules: The LED was turned ON")
+            logging.info("aqsm.schedules: The LED was turned OFF")
         else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED ON")
+            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED OFF")
     if  hardware.airpump_status()==0:
         ok =hardware.turn_on_airpump()
         if ok ==0:
             logging.info("aqsm.schedules: The Airpump was turned ON")
         else:
             logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump ON")
-    if  hardware.filter_status()==0:
+    if  hardware.filter_status()==1:
         ok =hardware.turn_off_filter()
         if ok ==0:
             logging.info("aqsm.schedules: The filter was turned OFF")
