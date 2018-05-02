@@ -38,7 +38,16 @@ Here is what our water body has now , not very diverse marine life.
 |Neon Tetra fish|12|
 |Green ring turtle|1|
 
-All the enlisted are tropical life and tolerate a temperature of about 21<sup>o</sup>C to about 27<sup>o</sup>C, 6hours of LED light :4 Watts, and aeration of approximately 6 hours.
+>All the enlisted are tropical life and tolerate a temperature of about 21<sup>o</sup>C to about 27<sup>o</sup>C, 6hours of LED light :4 Watts, and aeration of approximately 6 hours.
+
+|Paramter|Control|Status|
+|----|----|----|
+|Illumination|Clock controlled, 6-8 /day hours of ON time using 4W LED|Done,currently under test/ observation|
+|Aetration|Clock controlled , 7-9 /day hours for 35ltrs water body|Done!,currently under test/observation|
+|Filtration|Clock controlled , 10-12 hours/ day|Done !, under test / observation|
+|Feeding| 2 feeds / day , Midday, & Supper| Feeding mechanism being designed, servo controlled automatic|
+|Temperature|Maintain 21oC to 27oC , using analog water temperature sensor|Temperature sensor procurement|
+|pH|Maintain 6.8 to 7.0 pH to avoid ammonia accumulation|Water drain mechanism under design, pH Sensor out of budgets for the project|
 
 While aquarists would argue that this is not much of a task switching off / on certain accessories of the aquariums at any time during the day, automation systems allow you a chance to monitor higher parameters taking control of the drudgery of keeping a schedule clock of the aquarium. One may realize how vital this is when away from the aquarium.
 
@@ -49,10 +58,6 @@ While aquarists would argue that this is not much of a task switching off / on c
 - __Two__ is you have a remote handle / track of the electrical accessories and can even alter the schedule, force a restart on the system. Incase of emergency you can switch to manual mode and hijack control from the microprocessor. Casein - you know when to switch ON / OFF which accessory. Upon restart , the system then picks up internet local time and resumes the schedule from where it had left / crashed
 
 > Electronic system that helps you program a schedule for your aquarium and its electrical accessories, and keep a track of the same remotely. A time keeper for all the accessories maintaining optimal ON / OFF time
-
-### Outline of the solution
-
-
 
 ### What we are currently not doing :
 
