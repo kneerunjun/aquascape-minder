@@ -1,3 +1,8 @@
+### All natural elements aquascape
+
+### Is that an aquapone ?
+
+
 ### Project Aquascape minder:
 
 A healthy aquarium with all natural aqua scape has precision controlled parameters. While the marine life can sustain some aberrations , it is best to have close control over the water body parameters. We have also made an attempt to keep all the items in the aquarium natural with minimum interference from plastic or non biological items.
@@ -65,3 +70,10 @@ While aquarists would argue that this is not much of a task switching off / on c
 |20:00-21:59|Night|ON|ON|OFF|OFF|
 |22:00-23:59|Midnight|OFF|OFF|ON|OFF|
 |00:00-05:59|Dark night|OFF|OFF|ON|OFF|
+
+
+### Scheduling and Cron jobs :
+
+Central to the functioning of the automated aqua scape is the microprocessor's clock (which it gets the current local time from the internet ) and the ability to setup __cron jobs__. We have used the [apscheduler](https://apscheduler.readthedocs.io/en/latest/) to do just that.
+
+`apscheduler` is a easy way to schedule __cron jobs__ `decoratively`
