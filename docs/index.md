@@ -1,5 +1,5 @@
 ### All natural elements aquascape
-![Aquascape](https://github.com/kneerunjun/aquascape-minder/blob/master/docs/IMG_20180502_102153730_HDR.jpg)
+![Aquascape](IMG_20180502_102153730_HDR.jpg)
 
 
 ### Is that an aquapone ?
