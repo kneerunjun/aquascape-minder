@@ -1,12 +1,14 @@
 ### All natural elements aquascape
-![Aquascape](IMG-20180426-WA0027.jpg)
+![Aquarium elevation](IMG-20180426-WA0027.jpg "An all biological aquascape")
 
 
 ### Is that an aquapone ?
-![Aquascape](IMG_20180502_102153730_HDR.jpg)
+![Project elevation](IMG_20180502_102153730_HDR.jpg "A syngonium plant that needs no watering")
 
 
 ### Project Aquascape minder:
+
+![Project landscape](IMG_20180502_102112729_HDR.jpg "The entire system at a glance")
 
 A healthy aquarium with all natural aqua scape has precision controlled parameters. While the marine life can sustain some aberrations , it is best to have close control over the water body parameters. We have also made an attempt to keep all the items in the aquarium natural with minimum interference from plastic or non biological items.
 
