@@ -1,16 +1,27 @@
 ### All natural elements aquascape
 ![Aquarium elevation](IMG-20180426-WA0027.jpg "An all biological aquascape")
 
+We have made an attempt to keep all the items in the aquarium natural with minimum interference from plastic / metallic or non biological items. This renders the system pristine and very conducive to the marine life. In an effort to enact the exact natural environment for the fish we have used :
+
+1. Glossed pebbles
+2. Active carbon clay substratum
+3. Dwarf baby tears lawn - grown from seeds [Glossotigma Hemianthus](https://en.wikipedia.org/wiki/Hemianthus_callitrichoides)
+4. Polished drift wood
 
 ### Is that an aquapone ?
 ![Project elevation](IMG_20180502_102153730_HDR.jpg "A syngonium plant that needs no watering")
 
+__Yes it is !__. We have simple [syngonium snippet](https://www.ourhouseplants.com/plants/syngonium) drafted on the drift wood , growing away from the water surface, with its roots submerged. The plant uses up the `nitrates` in the water which formed from `nitrites` which in turn are the byproducts of `ammonia` from the fish waste.
+
+Here is the illustration of how the aquaponic cycle works
+![Aquponic cycle](timthumb.jpg)
+[Original image here](http://www.backyardaquaponics.com/information/the-nitrogen-cycle/)
 
 ### Project Aquascape minder:
 
 ![Project landscape](IMG_20180502_102112729_HDR.jpg "The entire system at a glance")
 
-A healthy aquarium with all natural aqua scape has precision controlled parameters. While the marine life can sustain some aberrations , it is best to have close control over the water body parameters. We have also made an attempt to keep all the items in the aquarium natural with minimum interference from plastic or non biological items.
+A healthy aquarium with all natural aqua scape has precision controlled parameters. While the marine life can sustain some aberrations , it is best to have close control over the water body parameters.
 
 Here is what our water body has now , not very diverse marine life.
 
