@@ -1,7 +1,7 @@
 ### All natural elements aquascape
 ![Aquarium elevation](IMG-20180426-WA0027.jpg "An all biological aquascape")
 
-We have made an attempt to keep all the items in the aquarium natural with minimum interference from plastic / metallic or non biological items. This renders the system pristine and very conducive to the marine life. In an effort to enact the exact natural environment for the fish we have used :
+We have made an attempt to keep all the items in the aquarium __natural__ with minimum interference from plastic / metallic or non biological items. This renders the system pristine and very conducive to the marine life. In an effort to enact the exact natural environment for the fish we have used :
 
 1. Glossed pebbles
 2. Active carbon clay substratum
@@ -9,13 +9,19 @@ We have made an attempt to keep all the items in the aquarium natural with minim
 4. Polished drift wood
 
 ### Is that an aquapone ?
+
 ![Project elevation](IMG_20180502_102153730_HDR.jpg "A syngonium plant that needs no watering")
 
 __Yes it is !__. We have simple [syngonium snippet](https://www.ourhouseplants.com/plants/syngonium) drafted on the drift wood , growing away from the water surface, with its roots submerged. The plant uses up the `nitrates` in the water which formed from `nitrites` which in turn are the byproducts of `ammonia` from the fish waste.
 
-Here is the illustration of how the aquaponic cycle works
-![Aquponic cycle](timthumb.jpg)
+Here is the illustration of how the aquaponic cycle works:
+![Aquponic cycle](timthumb.jpg "Simple nitrogen cycle in aquponics")
+
 [Original image here](http://www.backyardaquaponics.com/information/the-nitrogen-cycle/)
+
+At the current stage, we are not interested in harvesting consumable foliage / fruits from the plants. This system would strive to be a testimony for automated aquaponic system and if it can be sustained we can later extrapolate this to consumable plant products too.
+
+> A cloud connected, precision clock controlled , sensing and device management system for maximizing gain from an aquaponic system is central to the purpose of the project.
 
 ### Project Aquascape minder:
 
