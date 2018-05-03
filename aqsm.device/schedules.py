@@ -27,82 +27,86 @@ midnight = settings["crons"]["midnight"]
 darknight = settings["crons"]["darknight"]
 dawn= settings["crons"]["dawn"]
 
-def switch_board(settings):
+def switch_board(cronsettings):
     '''This is one stop place where all the cron jobs send their settings and the switch board is then operated accordingly
     settings        : variables from the global space denoting crons from settings.json
     settings object is expected to have properties as , led, airpump, filter, feeder
     '''
     ok =0
-    if "led" not in settings or (settings["led"]==False and hardware.led_status()==1):
+    if "led" not in cronsettings or (cronsettings["led"]==False and hardware.led_status()==1):
         ok =hardware.turn_off_led()
-    elif settings["led"]==True and hardware.led_status()==0:
+    elif cronsettings["led"]==True and hardware.led_status()==0:
+        print("LED being turned on")
         ok =hardware.turn_on_led()
     if ok!=0:
         logging.warning("aqsm.schedules:rise_and_shine: Error with LED switch_board")
     ok=0
-    if "airpump" not in settings or (settings["airpump"]==False and hardware.airpump_status()==1):
+    if "airpump" not in cronsettings or (cronsettings["airpump"]==False and hardware.airpump_status()==1):
         ok =hardware.turn_off_airpump()
-    elif settings["airpump"]==True and hardware.airpump_status()==0:
+    elif cronsettings["airpump"]==True and hardware.airpump_status()==0:
+        print("Airpump being turned on")
         ok =hardware.turn_on_airpump()
     if ok!=0:
         logging.warning("aqsm.schedules:rise_and_shine: Error with Airpump switch_board")
     ok=0
-    if "filter" not in settings or (settings["filter"]==False and hardware.filter_status()==1):
+    if "filter" not in cronsettings or (cronsettings["filter"]==False and hardware.filter_status()==1):
+        print("Filter being turned off")
         ok =hardware.turn_off_filter()
-    elif settings["filter"]==True and hardware.filter_status()==0:
+    elif cronsettings["filter"]==True and hardware.filter_status()==0:
         ok =hardware.turn_on_filter()
     if ok!=0:
         logging.warning("aqsm.schedules:rise_and_shine: Error with Filter switch_board")
     ok=0
-    if "feeder" not in settings or (settings["feeder"]==False and hardware.feeder_status()==1):
+    if "feeder" not in cronsettings or (cronsettings["feeder"]==False and hardware.feeder_status()==1):
         ok =hardware.turn_off_feeder()
-    elif settings["feeder"]==True and hardware.feeder_status()==0:
+    elif cronsettings["feeder"]==True and hardware.feeder_status()==0:
         ok =hardware.turn_on_feeder()
     if ok!=0:
         logging.warning("aqsm.schedules:rise_and_shine: Error with Feeder switch_board")
 
 @sched.scheduled_job('cron', hour=riseandshine["hours"], minute=riseandshine["minutes"], timezone="Asia/Kolkata")
-def rise_and_shine():
+def call_riseandshine():
     global riseandshine
     switch_board(riseandshine)
 
 @sched.scheduled_job('cron', hour=middaycalm["hours"], minute=middaycalm["minutes"], timezone="Asia/Kolkata")
-def mid_day_calm():
+def call_middaycalm():
     global middaycalm
     switch_board(middaycalm)
 
 @sched.scheduled_job('cron', hour=middaycleanup["hours"], minute=middaycleanup["minutes"], timezone="Asia/Kolkata")
-def mid_day_cleanup():
+def call_middaycleanup():
     global middaycleanup
     switch_board(middaycleanup)
 
 @sched.scheduled_job('cron', hour=lateafternoon["hours"], minute=lateafternoon["minutes"], timezone="Asia/Kolkata")
-def late_after_noon():
+def call_lateafternoon():
     global lateafternoon
     switch_board(lateafternoon)
 
 @sched.scheduled_job('cron', hour=twilight["hours"], minute=twilight["minutes"], timezone="Asia/Kolkata")
-def twilight():
+def call_twilight():
     global twilight
+    print(twilight)
     switch_board(twilight)
 
 @sched.scheduled_job('cron', hour=supper["hours"], minute=supper["minutes"], timezone="Asia/Kolkata")
-def supper():
+def call_supper():
     global supper
     switch_board(supper)
 
 @sched.scheduled_job('cron', hour=night["hours"], minute=night["minutes"], timezone="Asia/Kolkata")
-def night():
+def call_night():
     global night
     switch_board(night)
 
 @sched.scheduled_job('cron', hour=midnight["hours"], minute=midnight["minutes"], timezone="Asia/Kolkata")
-def midnight():
+def call_midnight():
     global midnight
     switch_board(midnight)
 
 @sched.scheduled_job('cron', hour=darknight["hours"], minute=darknight["minutes"], timezone="Asia/Kolkata")
-def darknight():
+def call_darknight():
     global darknight
     switch_board(darknight)
 

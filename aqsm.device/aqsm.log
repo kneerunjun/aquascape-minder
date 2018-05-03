@@ -1083,3 +1083,198 @@
 22:04:07,253 apscheduler.scheduler INFO Scheduler has been shut down
 22:04:07,253 apscheduler.scheduler DEBUG Looking for jobs to run
 22:04:07,254 apscheduler.scheduler DEBUG No jobs; waiting until a job is added
+18:07:31,819 root INFO aqsm.device.minder :Running Aquascape minder
+18:07:31,837 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+18:07:31,839 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+18:07:31,840 apscheduler.scheduler INFO Added job "mid_day_cleanup" to job store "default"
+18:07:31,841 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+18:07:31,842 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+18:07:31,843 apscheduler.scheduler INFO Added job "supper" to job store "default"
+18:07:31,844 apscheduler.scheduler INFO Added job "night" to job store "default"
+18:07:31,846 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+18:07:31,847 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+18:07:31,848 apscheduler.scheduler INFO Added job "dawn" to job store "default"
+18:07:31,848 apscheduler.scheduler INFO Scheduler started
+18:07:31,849 apscheduler.scheduler DEBUG Looking for jobs to run
+18:07:31,850 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:08:00+05:30 (in 28.149767 seconds)
+18:08:00,1 apscheduler.scheduler DEBUG Looking for jobs to run
+18:08:00,4 apscheduler.executors.default INFO Running job "twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:08:00 IST)" (scheduled at 2018-05-03 18:08:00+05:30)
+18:08:00,8 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:09:00+05:30 (in 59.997961 seconds)
+18:08:00,11 apscheduler.executors.default ERROR Job "twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:09:00 IST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/pi/src/aquascape-minder/aqsm.device/schedules.py", line 87, in twilight
+    switch_board(twilight)
+  File "/home/pi/src/aquascape-minder/aqsm.device/schedules.py", line 36, in switch_board
+    if "led" not in settings or (settings["led"]==False and hardware.led_status()==1):
+TypeError: argument of type 'function' is not iterable
+18:08:15,15 apscheduler.scheduler INFO Scheduler has been shut down
+18:08:15,16 apscheduler.scheduler DEBUG Looking for jobs to run
+18:08:15,17 apscheduler.scheduler DEBUG No jobs; waiting until a job is added
+18:10:15,213 root INFO aqsm.device.minder :Running Aquascape minder
+18:10:15,231 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+18:10:15,232 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+18:10:15,234 apscheduler.scheduler INFO Added job "mid_day_cleanup" to job store "default"
+18:10:15,235 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+18:10:15,236 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+18:10:15,237 apscheduler.scheduler INFO Added job "supper" to job store "default"
+18:10:15,238 apscheduler.scheduler INFO Added job "night" to job store "default"
+18:10:15,239 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+18:10:15,240 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+18:10:15,242 apscheduler.scheduler INFO Added job "dawn" to job store "default"
+18:10:15,242 apscheduler.scheduler INFO Scheduler started
+18:10:15,243 apscheduler.scheduler DEBUG Looking for jobs to run
+18:10:15,244 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:11:00+05:30 (in 44.755591 seconds)
+18:11:00,1 apscheduler.scheduler DEBUG Looking for jobs to run
+18:11:00,4 apscheduler.executors.default INFO Running job "twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:11:00 IST)" (scheduled at 2018-05-03 18:11:00+05:30)
+18:11:00,8 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:12:00+05:30 (in 59.997896 seconds)
+18:11:00,12 apscheduler.executors.default ERROR Job "twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:12:00 IST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/pi/src/aquascape-minder/aqsm.device/schedules.py", line 91, in twilight
+    switch_board(twilight)
+  File "/home/pi/src/aquascape-minder/aqsm.device/schedules.py", line 36, in switch_board
+    if "led" not in settings or (settings["led"]==False and hardware.led_status()==1):
+TypeError: argument of type 'function' is not iterable
+18:11:11,587 apscheduler.scheduler INFO Scheduler has been shut down
+18:11:11,588 apscheduler.scheduler DEBUG Looking for jobs to run
+18:11:11,589 apscheduler.scheduler DEBUG No jobs; waiting until a job is added
+18:11:45,61 root INFO aqsm.device.minder :Running Aquascape minder
+18:11:45,79 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+18:11:45,80 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+18:11:45,81 apscheduler.scheduler INFO Added job "mid_day_cleanup" to job store "default"
+18:11:45,83 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+18:11:45,84 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+18:11:45,85 apscheduler.scheduler INFO Added job "supper" to job store "default"
+18:11:45,86 apscheduler.scheduler INFO Added job "night" to job store "default"
+18:11:45,87 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+18:11:45,88 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+18:11:45,89 apscheduler.scheduler INFO Added job "dawn" to job store "default"
+18:11:45,90 apscheduler.scheduler INFO Scheduler started
+18:11:45,91 apscheduler.scheduler DEBUG Looking for jobs to run
+18:11:45,92 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:12:00+05:30 (in 14.908281 seconds)
+18:12:00,1 apscheduler.scheduler DEBUG Looking for jobs to run
+18:12:00,4 apscheduler.executors.default INFO Running job "twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:12:00 IST)" (scheduled at 2018-05-03 18:12:00+05:30)
+18:12:00,8 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:13:00+05:30 (in 59.997945 seconds)
+18:12:00,12 apscheduler.executors.default ERROR Job "twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:13:00 IST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/pi/src/aquascape-minder/aqsm.device/schedules.py", line 92, in twilight
+    switch_board(twilight)
+  File "/home/pi/src/aquascape-minder/aqsm.device/schedules.py", line 37, in switch_board
+    if "led" not in settings or (settings["led"]==False and hardware.led_status()==1):
+TypeError: argument of type 'function' is not iterable
+18:12:06,819 apscheduler.scheduler INFO Scheduler has been shut down
+18:12:06,820 apscheduler.scheduler DEBUG Looking for jobs to run
+18:12:06,821 apscheduler.scheduler DEBUG No jobs; waiting until a job is added
+18:13:30,341 root INFO aqsm.device.minder :Running Aquascape minder
+18:13:30,359 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+18:13:30,360 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+18:13:30,361 apscheduler.scheduler INFO Added job "mid_day_cleanup" to job store "default"
+18:13:30,363 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+18:13:30,364 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+18:13:30,365 apscheduler.scheduler INFO Added job "supper" to job store "default"
+18:13:30,366 apscheduler.scheduler INFO Added job "night" to job store "default"
+18:13:30,367 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+18:13:30,368 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+18:13:30,369 apscheduler.scheduler INFO Added job "dawn" to job store "default"
+18:13:30,370 apscheduler.scheduler INFO Scheduler started
+18:13:30,371 apscheduler.scheduler DEBUG Looking for jobs to run
+18:13:30,372 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:14:00+05:30 (in 29.628082 seconds)
+18:14:00,1 apscheduler.scheduler DEBUG Looking for jobs to run
+18:14:00,3 apscheduler.executors.default INFO Running job "twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:14:00 IST)" (scheduled at 2018-05-03 18:14:00+05:30)
+18:14:00,5 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:15:00+05:30 (in 59.998420 seconds)
+18:14:00,7 apscheduler.executors.default ERROR Job "twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:15:00 IST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/pi/src/aquascape-minder/aqsm.device/schedules.py", line 91, in twilight
+    switch_board(twilight)
+  File "/home/pi/src/aquascape-minder/aqsm.device/schedules.py", line 36, in switch_board
+    if "led" not in cronsettings or (cronsettings["led"]==False and hardware.led_status()==1):
+TypeError: argument of type 'function' is not iterable
+18:14:08,441 apscheduler.scheduler INFO Scheduler has been shut down
+18:14:08,442 apscheduler.scheduler DEBUG Looking for jobs to run
+18:14:08,443 apscheduler.scheduler DEBUG No jobs; waiting until a job is added
+18:14:47,761 root INFO aqsm.device.minder :Running Aquascape minder
+18:14:47,778 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+18:14:47,780 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+18:14:47,781 apscheduler.scheduler INFO Added job "mid_day_cleanup" to job store "default"
+18:14:47,782 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+18:14:47,783 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+18:14:47,784 apscheduler.scheduler INFO Added job "supper" to job store "default"
+18:14:47,786 apscheduler.scheduler INFO Added job "night" to job store "default"
+18:14:47,787 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+18:14:47,788 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+18:14:47,789 apscheduler.scheduler INFO Added job "dawn" to job store "default"
+18:14:47,789 apscheduler.scheduler INFO Scheduler started
+18:14:47,790 apscheduler.scheduler DEBUG Looking for jobs to run
+18:14:47,791 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:15:00+05:30 (in 12.208539 seconds)
+18:15:00,1 apscheduler.scheduler DEBUG Looking for jobs to run
+18:15:00,3 apscheduler.executors.default INFO Running job "twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:15:00 IST)" (scheduled at 2018-05-03 18:15:00+05:30)
+18:15:00,5 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:16:00+05:30 (in 59.998297 seconds)
+18:15:00,8 apscheduler.executors.default ERROR Job "twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:16:00 IST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/pi/src/aquascape-minder/aqsm.device/schedules.py", line 92, in twilight
+    switch_board(twilight)
+  File "/home/pi/src/aquascape-minder/aqsm.device/schedules.py", line 37, in switch_board
+    if "led" not in cronsettings or (cronsettings["led"]==False and hardware.led_status()==1):
+TypeError: argument of type 'function' is not iterable
+18:15:09,280 apscheduler.scheduler INFO Scheduler has been shut down
+18:15:09,282 apscheduler.scheduler DEBUG Looking for jobs to run
+18:15:09,283 apscheduler.scheduler DEBUG No jobs; waiting until a job is added
+18:15:47,5 root INFO aqsm.device.minder :Running Aquascape minder
+18:15:47,23 apscheduler.scheduler INFO Added job "rise_and_shine" to job store "default"
+18:15:47,24 apscheduler.scheduler INFO Added job "mid_day_calm" to job store "default"
+18:15:47,26 apscheduler.scheduler INFO Added job "mid_day_cleanup" to job store "default"
+18:15:47,27 apscheduler.scheduler INFO Added job "late_after_noon" to job store "default"
+18:15:47,28 apscheduler.scheduler INFO Added job "twilight" to job store "default"
+18:15:47,29 apscheduler.scheduler INFO Added job "supper" to job store "default"
+18:15:47,30 apscheduler.scheduler INFO Added job "night" to job store "default"
+18:15:47,31 apscheduler.scheduler INFO Added job "midnight" to job store "default"
+18:15:47,32 apscheduler.scheduler INFO Added job "darknight" to job store "default"
+18:15:47,33 apscheduler.scheduler INFO Added job "dawn" to job store "default"
+18:15:47,34 apscheduler.scheduler INFO Scheduler started
+18:15:47,35 apscheduler.scheduler DEBUG Looking for jobs to run
+18:15:47,36 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:16:00+05:30 (in 12.964307 seconds)
+18:16:00,1 apscheduler.scheduler DEBUG Looking for jobs to run
+18:16:00,3 apscheduler.executors.default INFO Running job "twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:16:00 IST)" (scheduled at 2018-05-03 18:16:00+05:30)
+18:16:00,5 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:17:00+05:30 (in 59.998205 seconds)
+18:16:00,7 apscheduler.executors.default ERROR Job "twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:17:00 IST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/home/pi/src/aquascape-minder/aqsm.device/schedules.py", line 92, in twilight
+    switch_board(twilight)
+  File "/home/pi/src/aquascape-minder/aqsm.device/schedules.py", line 37, in switch_board
+    if "led" not in cronsettings or (cronsettings["led"]==False and hardware.led_status()==1):
+TypeError: argument of type 'function' is not iterable
+18:16:06,561 apscheduler.scheduler INFO Scheduler has been shut down
+18:16:06,562 apscheduler.scheduler DEBUG Looking for jobs to run
+18:16:06,563 apscheduler.scheduler DEBUG No jobs; waiting until a job is added
+18:18:23,794 root INFO aqsm.device.minder :Running Aquascape minder
+18:18:23,812 apscheduler.scheduler INFO Added job "call_riseandshine" to job store "default"
+18:18:23,814 apscheduler.scheduler INFO Added job "call_middaycalm" to job store "default"
+18:18:23,815 apscheduler.scheduler INFO Added job "call_middaycleanup" to job store "default"
+18:18:23,816 apscheduler.scheduler INFO Added job "call_lateafternoon" to job store "default"
+18:18:23,817 apscheduler.scheduler INFO Added job "call_twilight" to job store "default"
+18:18:23,818 apscheduler.scheduler INFO Added job "call_supper" to job store "default"
+18:18:23,819 apscheduler.scheduler INFO Added job "call_night" to job store "default"
+18:18:23,820 apscheduler.scheduler INFO Added job "call_midnight" to job store "default"
+18:18:23,821 apscheduler.scheduler INFO Added job "call_darknight" to job store "default"
+18:18:23,823 apscheduler.scheduler INFO Added job "dawn" to job store "default"
+18:18:23,823 apscheduler.scheduler INFO Scheduler started
+18:18:23,824 apscheduler.scheduler DEBUG Looking for jobs to run
+18:18:23,825 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:19:00+05:30 (in 36.175098 seconds)
+18:19:00,1 apscheduler.scheduler DEBUG Looking for jobs to run
+18:19:00,3 apscheduler.executors.default INFO Running job "call_twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:19:00 IST)" (scheduled at 2018-05-03 18:19:00+05:30)
+18:19:00,5 apscheduler.scheduler DEBUG Next wakeup is due at 2018-05-03 18:20:00+05:30 (in 59.998215 seconds)
+18:19:00,6 apscheduler.executors.default INFO Job "call_twilight (trigger: cron[hour='18', minute='0-59'], next run at: 2018-05-03 18:20:00 IST)" executed successfully
+18:19:11,640 apscheduler.scheduler INFO Scheduler has been shut down
+18:19:11,641 apscheduler.scheduler DEBUG Looking for jobs to run
+18:19:11,642 apscheduler.scheduler DEBUG No jobs; waiting until a job is added
