@@ -27,333 +27,86 @@ midnight = settings["crons"]["midnight"]
 darknight = settings["crons"]["darknight"]
 dawn= settings["crons"]["dawn"]
 
+def switch_board(settings):
+    '''This is one stop place where all the cron jobs send their settings and the switch board is then operated accordingly
+    settings        : variables from the global space denoting crons from settings.json
+    settings object is expected to have properties as , led, airpump, filter, feeder
+    '''
+    ok =0
+    if "led" not in settings or (settings["led"]==False and hardware.led_status()==1):
+        ok =hardware.turn_off_led()
+    elif settings["led"]==True and hardware.led_status()==0:
+        ok =hardware.turn_on_led()
+    if ok!=0:
+        logging.warning("aqsm.schedules:rise_and_shine: Error with LED switch_board")
+    ok=0
+    if "airpump" not in settings or (settings["airpump"]==False and hardware.airpump_status()==1):
+        ok =hardware.turn_off_airpump()
+    elif settings["airpump"]==True and hardware.airpump_status()==0:
+        ok =hardware.turn_on_airpump()
+    if ok!=0:
+        logging.warning("aqsm.schedules:rise_and_shine: Error with Airpump switch_board")
+    ok=0
+    if "filter" not in settings or (settings["filter"]==False and hardware.filter_status()==1):
+        ok =hardware.turn_off_filter()
+    elif settings["filter"]==True and hardware.filter_status()==0:
+        ok =hardware.turn_on_filter()
+    if ok!=0:
+        logging.warning("aqsm.schedules:rise_and_shine: Error with Filter switch_board")
+    ok=0
+    if "feeder" not in settings or (settings["feeder"]==False and hardware.feeder_status()==1):
+        ok =hardware.turn_off_feeder()
+    elif settings["feeder"]==True and hardware.feeder_status()==0:
+        ok =hardware.turn_on_feeder()
+    if ok!=0:
+        logging.warning("aqsm.schedules:rise_and_shine: Error with Feeder switch_board")
+
 @sched.scheduled_job('cron', hour=riseandshine["hours"], minute=riseandshine["minutes"], timezone="Asia/Kolkata")
 def rise_and_shine():
-    '''This gets triggered in the morning time , till midday
-    LED     :   ON
-    AIRPUMP :   ON
-    FILTER  :   OFF
-    FEEDER  :   OFF
-    life at the tank is encouraged to get in active state, woken up from the slumber
-    '''
-    if  hardware.led_status()==0:
-        ok =hardware.turn_on_led()
-        if ok ==0:
-            logging.info("aqsm.schedules: The LED was turned ON")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED ON")
-    if  hardware.airpump_status()==0:
-        ok =hardware.turn_on_airpump()
-        if ok ==0:
-            logging.info("aqsm.schedules: The Airpump was turned ON")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump ON")
-    if  hardware.filter_status()==1:
-        ok =hardware.turn_off_filter()
-        if ok ==0:
-            logging.info("aqsm.schedules: The filter was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the filter OFF")
-    if  hardware.feeder_status()==1:
-        ok =hardware.turn_off_feeder()
-        if ok ==0:
-            logging.info("aqsm.schedules: The feeder was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the feeder OFF")
+    global riseandshine
+    switch_board(riseandshine)
 
 @sched.scheduled_job('cron', hour=middaycalm["hours"], minute=middaycalm["minutes"], timezone="Asia/Kolkata")
 def mid_day_calm():
-    '''This gets triggered after the morning rush hour, we need to give the creatures some de-stress time
-    LED     :   OFF
-    AIRPUMP :   OFF
-    FILTER  :   OFF
-    FEEDER  :   OFF - this can be thought out if we need to trigger and leave it to feed the requisite amount
-    '''
-    if  hardware.led_status()==1:
-        ok =hardware.turn_off_led()
-        if ok ==0:
-            logging.info("aqsm.schedules: The LED was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED OFF")
-    if  hardware.airpump_status()==1:
-        ok =hardware.turn_off_airpump()
-        if ok ==0:
-            logging.info("aqsm.schedules: The Airpump was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump OFF")
-    if  hardware.filter_status()==1:
-        ok =hardware.turn_off_filter()
-        if ok ==0:
-            logging.info("aqsm.schedules: The filter was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the filter OFF")
-    if  hardware.feeder_status()==1:
-        ok =hardware.turn_off_feeder()
-        if ok ==0:
-            logging.info("aqsm.schedules: The feeder was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the feeder OFF")
+    global middaycalm
+    switch_board(middaycalm)
 
 @sched.scheduled_job('cron', hour=middaycleanup["hours"], minute=middaycleanup["minutes"], timezone="Asia/Kolkata")
 def mid_day_cleanup():
-    '''Once after the lunch feeding is done we need to clean up the water body & de-stress time
-    LED     :   OFF
-    AIRPUMP :   OFF
-    FILTER  :   ON
-    FEEDER  :   OFF
-    '''
-    if  hardware.led_status()==1:
-        ok =hardware.turn_off_led()
-        if ok ==0:
-            logging.info("aqsm.schedules: The LED was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED OFF")
-    if  hardware.airpump_status()==1:
-        ok =hardware.turn_off_airpump()
-        if ok ==0:
-            logging.info("aqsm.schedules: The Airpump was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump OFF")
-    if  hardware.filter_status()==0:
-        ok =hardware.turn_on_filter()
-        if ok ==0:
-            logging.info("aqsm.schedules: The filter was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the filter OFF")
-    if  hardware.feeder_status()==1:
-        ok =hardware.turn_off_feeder()
-        if ok ==0:
-            logging.info("aqsm.schedules: The feeder was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the feeder OFF")
+    global middaycleanup
+    switch_board(middaycleanup)
 
 @sched.scheduled_job('cron', hour=lateafternoon["hours"], minute=lateafternoon["minutes"], timezone="Asia/Kolkata")
 def late_after_noon():
-    '''After some de-stressing we can resume the airpump , and let the led be off
-    LED     :   OFF
-    AIRPUMP :   ON
-    FILTER  :   OFF
-    FEEDER  :   OFF - this can be thought out if we need to trigger and leave it to feed the requisite amount
-    '''
-    if  hardware.led_status()==1:
-        ok =hardware.turn_off_led()
-        if ok ==0:
-            logging.info("aqsm.schedules: The LED was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED OFF")
-    if  hardware.airpump_status()==0:
-        ok =hardware.turn_on_airpump()
-        if ok ==0:
-            logging.info("aqsm.schedules: The Airpump was turned ON")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump ON")
-    if  hardware.filter_status()==1:
-        ok =hardware.turn_off_filter()
-        if ok ==0:
-            logging.info("aqsm.schedules: The filter was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the filter OFF")
-    if  hardware.feeder_status()==1:
-        ok =hardware.turn_off_feeder()
-        if ok ==0:
-            logging.info("aqsm.schedules: The feeder was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the feeder OFF")
+    global lateafternoon
+    switch_board(lateafternoon)
 
 @sched.scheduled_job('cron', hour=twilight["hours"], minute=twilight["minutes"], timezone="Asia/Kolkata")
 def twilight():
-    '''We continue to have the pump on , and here we go ahead to turn on the LED as well.
-    LED     :   ON
-    AIRPUMP :   ON
-    FILTER  :   OFF
-    FEEDER  :   OFF
-    '''
-    if  hardware.led_status()==0:
-        ok =hardware.turn_on_led()
-        if ok ==0:
-            logging.info("aqsm.schedules: The LED was turned ON")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED ON")
-    if  hardware.airpump_status()==0:
-        ok =hardware.turn_on_airpump()
-        if ok ==0:
-            logging.info("aqsm.schedules: The Airpump was turned ON")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump ON")
-    if  hardware.filter_status()==1:
-        ok =hardware.turn_off_filter()
-        if ok ==0:
-            logging.info("aqsm.schedules: The filter was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the filter OFF")
-    if  hardware.feeder_status()==1:
-        ok =hardware.turn_off_feeder()
-        if ok ==0:
-            logging.info("aqsm.schedules: The feeder was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the feeder OFF")
+    global twilight
+    switch_board(twilight)
 
 @sched.scheduled_job('cron', hour=supper["hours"], minute=supper["minutes"], timezone="Asia/Kolkata")
 def supper():
-    '''We continue to have the pump on , and here we go ahead to turn on the LED as well.
-    LED         :   ON
-    AIRPUMP     :   OFF
-    FILTER      :   OFF
-    FEEDER      :   ON
-    '''
-    if  hardware.led_status()==0:
-        ok =hardware.turn_on_led()
-        if ok ==0:
-            logging.info("aqsm.schedules: The LED was turned ON")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED ON")
-    if  hardware.airpump_status()==1:
-        ok =hardware.turn_off_airpump()
-        if ok ==0:
-            logging.info("aqsm.schedules: The Airpump was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump OFF")
-    if  hardware.filter_status()==1:
-        ok =hardware.turn_off_filter()
-        if ok ==0:
-            logging.info("aqsm.schedules: The filter was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the filter OFF")
-    if  hardware.feeder_status()==0:
-        ok =hardware.turn_on_feeder()
-        if ok ==0:
-            logging.info("aqsm.schedules: The feeder was turned ON")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the feeder ON")
+    global supper
+    switch_board(supper)
 
 @sched.scheduled_job('cron', hour=night["hours"], minute=night["minutes"], timezone="Asia/Kolkata")
 def night():
-    '''We continue to have the pump on , and here we go ahead to turn on the LED as well.
-    LED         :   ON
-    AIRPUMP     :   OFF
-    FILTER      :   ON
-    FEEDER      :   OFF
-    '''
-    if  hardware.led_status()==0:
-        ok =hardware.turn_on_led()
-        if ok ==0:
-            logging.info("aqsm.schedules: The LED was turned ON")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED ON")
-    if  hardware.airpump_status()==1:
-        ok =hardware.turn_off_airpump()
-        if ok ==0:
-            logging.info("aqsm.schedules: The Airpump was turned ON")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump ON")
-    if  hardware.filter_status()==0:
-        ok =hardware.turn_on_filter()
-        if ok ==0:
-            logging.info("aqsm.schedules: The filter was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the filter OFF")
-    if  hardware.feeder_status()==1:
-        ok =hardware.turn_off_feeder()
-        if ok ==0:
-            logging.info("aqsm.schedules: The feeder was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the feeder OFF")
+    global night
+    switch_board(night)
 
 @sched.scheduled_job('cron', hour=midnight["hours"], minute=midnight["minutes"], timezone="Asia/Kolkata")
 def midnight():
-    '''This de-stressing time for the marine life, with minimum amount of aeration
-    LED         :   OFF
-    AIRPUMP     :   OFF
-    FILTER      :   ON
-    FEEDER      :   OFF
-    '''
-    if  hardware.led_status()==1:
-        ok =hardware.turn_off_led()
-        if ok ==0:
-            logging.info("aqsm.schedules: The LED was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED OFF")
-    if  hardware.airpump_status()==1:
-        ok =hardware.turn_off_airpump()
-        if ok ==0:
-            logging.info("aqsm.schedules: The Airpump was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump OFF")
-    if  hardware.filter_status()==0:
-        ok =hardware.turn_on_filter()
-        if ok ==0:
-            logging.info("aqsm.schedules: The filter was turned ON")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the filter ON")
-    if  hardware.feeder_status()==1:
-        ok =hardware.turn_off_feeder()
-        if ok ==0:
-            logging.info("aqsm.schedules: The feeder was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the feeder OFF")
+    global midnight
+    switch_board(midnight)
 
 @sched.scheduled_job('cron', hour=darknight["hours"], minute=darknight["minutes"], timezone="Asia/Kolkata")
 def darknight():
-    '''Still water body nothing is turned ON. Next high energy wake up would be rise and shine
-    LED         :   OFF
-    AIRPUMP     :   OFF
-    FILTER      :   OFF
-    FEEDER      :   OFF
-    '''
-    if  hardware.led_status()==1:
-        ok =hardware.turn_off_led()
-        if ok ==0:
-            logging.info("aqsm.schedules: The LED was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED OFF")
-    if  hardware.airpump_status()==1:
-        ok =hardware.turn_off_airpump()
-        if ok ==0:
-            logging.info("aqsm.schedules: The Airpump was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump OFF")
-    if  hardware.filter_status()==1:
-        ok =hardware.turn_off_filter()
-        if ok ==0:
-            logging.info("aqsm.schedules: The filter was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the filter OFF")
-    if  hardware.feeder_status()==1:
-        ok =hardware.turn_off_feeder()
-        if ok ==0:
-            logging.info("aqsm.schedules: The feeder was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the feeder OFF")
+    global darknight
+    switch_board(darknight)
 
 @sched.scheduled_job('cron', hour=dawn["hours"], minute=dawn["minutes"], timezone="Asia/Kolkata")
 def dawn():
-    '''Still water body nothing is turned ON. Next high energy wake up would be rise and shine
-    LED         :   OFF
-    AIRPUMP     :   OFF
-    FILTER      :   ON
-    FEEDER      :   OFF
-    '''
-    if  hardware.led_status()==1:
-        ok =hardware.turn_off_led()
-        if ok ==0:
-            logging.info("aqsm.schedules: The LED was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the LED OFF")
-    if  hardware.airpump_status()==1:
-        ok =hardware.turn_off_airpump()
-        if ok ==0:
-            logging.info("aqsm.schedules: The Airpump was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the Airpump OFF")
-    if  hardware.filter_status()==0:
-        ok =hardware.turn_on_filter()
-        if ok ==0:
-            logging.info("aqsm.schedules: The filter was turned ON")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the filter ON")
-    if  hardware.feeder_status()==1:
-        ok =hardware.turn_off_feeder()
-        if ok ==0:
-            logging.info("aqsm.schedules: The feeder was turned OFF")
-        else:
-            logging.warning("aqsm.schedules:rise_and_shine: Error turning the feeder OFF")
+    global dawn
+    switch_board(dawn)

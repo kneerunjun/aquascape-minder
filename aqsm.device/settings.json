@@ -2,34 +2,44 @@
   "settings":{
     "crons":{
       "riseandshine":{
-        "hours":"6-11", "minutes":"0-59"
+        "hours":"6-11","minutes":"0-59",
+        "led":true,"airpump":true,"filter":false,"feeder":false
       },
       "middaycalm":{
-        "hours":"12-13", "minutes":"0-59"
+        "hours":"12-13", "minutes":"0-59",
+        "led":false,"airpump":false,"filter":false,"feeder":true
       },
       "middaycleanup":{
-        "hours":"14", "minutes":"0-59"
+        "hours":"14", "minutes":"0-59",
+        "led":false,"airpump":false,"filter":true,"feeder":false
       },
       "lateafternoon":{
-        "hours":"15-17", "minutes":"0-59"
+        "hours":"15-17", "minutes":"0-59",
+        "led":false,"airpump":true,"filter":false,"feeder":false
       },
       "twilight":{
-        "hours":"18", "minutes":"0-59"
+        "hours":"18", "minutes":"0-59",
+        "led":true,"airpump":true,"filter":false,"feeder":false
       },
       "supper":{
-        "hours":"19", "minutes":"0-59"
+        "hours":"19", "minutes":"0-59",
+        "led":true,"airpump":false,"filter":false,"feeder":true
       },
       "night":{
-        "hours":"20-21", "minutes":"0-59"
+        "hours":"20-21", "minutes":"0-59",
+        "led":true,"airpump":false,"filter":true,"feeder":false
       },
       "midnight":{
-        "hours":"22-23", "minutes":"0-59"
+        "hours":"22-23", "minutes":"0-59",
+        "led":false,"airpump":false,"filter":true,"feeder":false
       },
       "darknight":{
-        "hours":"0-3", "minutes":"0-59"
+        "hours":"0-3", "minutes":"0-59",
+        "led":false,"airpump":false,"filter":false,"feeder":false
       },
       "dawn":{
-        "hours":"4-5", "minutes":"0-59"
+        "hours":"4-5", "minutes":"0-59",
+        "led":false,"airpump":false,"filter":true,"feeder":false
       }
     }
   }
