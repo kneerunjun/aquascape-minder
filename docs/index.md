@@ -82,8 +82,8 @@ While aquarists would argue that this is not much of a task switching off / on c
 |Technology|Used for|Remarks|
 |----|----|----|
 |Raspberry Pi|Central microprocessor used for programmed controlling|RPi3B+ 2GB RAM|
-|Python software on RPi|Program running on the microprocessor helps to time and control everything|RPi3B+ 2GB RAM|
-|Cloud endpoints|HTTP REST cloud endpoints are the gateway for the microprocessor to store away settings and state. This is is what gets us the remoting capability|Cloud hosted HTTP services|
+|Python software on RPi|Program running on the microprocessor helps to time and control everything|Python RPiGPIO|
+|Cloud endpoints|HTTP REST cloud endpoints are the gateway for the microprocessor to store away settings and state. This is is what gets us the remoting capability|Django HTTP services|
 |Web App|Responsive web application for devices of all aspect ratios |HTMLCSS web app that works on mobile as well on desktops|
 
 
