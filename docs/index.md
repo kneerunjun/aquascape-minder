@@ -49,7 +49,7 @@ Here is what our water body has now , not very diverse marine life.
 |Temperature|Maintain 21oC to 27oC , using analog water temperature sensor|Temperature sensor procurement|
 |pH|Maintain 6.8 to 7.0 pH to avoid ammonia accumulation|Water drain mechanism under design, pH Sensor out of budgets for the project|
 
-![Minder glance](IMG-20180502-WA0060.jpg, "Check the minder in action")
+![Minder glance](IMG-20180502-WA0060.jpg "Check the minder in action")
 
 While aquarists would argue that this is not much of a task switching off / on certain accessories of the aquariums at any time during the day, automation systems allow you a chance to monitor higher parameters taking control of the drudgery of keeping a schedule clock of the aquarium. One may realize how vital this is when away from the aquarium.
 
