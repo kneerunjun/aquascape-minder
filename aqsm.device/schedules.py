@@ -87,7 +87,6 @@ def call_lateafternoon():
 @sched.scheduled_job('cron', hour=twilight["hours"], minute=twilight["minutes"], timezone="Asia/Kolkata")
 def call_twilight():
     global twilight
-    print(twilight)
     switch_board(twilight)
 
 @sched.scheduled_job('cron', hour=supper["hours"], minute=supper["minutes"], timezone="Asia/Kolkata")
