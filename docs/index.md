@@ -92,13 +92,15 @@ While aquarists would argue that this is not much of a task switching off / on c
 |Time slot|Indexing|LED|Air pump|Filter|Feeder|
 |-----|-----|-----|-----|-----|-----|
 |06:00-11:59|Rise and shine|ON|ON|OFF|OFF|
-|12:00-14:59|Mid day calm|OFF|OFF|OFF|OFF|
+|12:00-13:59|Mid day calm|OFF|OFF|OFF|ON|
+|14:00-14:59|Mid day cleanup|OFF|ON|ON|OFF|
 |15:00-17:59|Late afternoon|OFF|ON|OFF|OFF|
 |18:00-18:59|Twilight|ON|ON|OFF|OFF|
-|19:00-19:59|Supper|OFF|OFF|OFF|ON|
-|20:00-21:59|Night|ON|ON|OFF|OFF|
+|19:00-19:59|Supper|ON|OFF|OFF|ON|
+|20:00-21:59|Night|ON|OFF|ON|OFF|
 |22:00-23:59|Midnight|OFF|OFF|ON|OFF|
-|00:00-05:59|Dark night|OFF|OFF|ON|OFF|
+|00:00-03:59|Dark night|OFF|OFF|OFF|OFF|
+|04:00-05:59|Dark night|OFF|OFF|ON|OFF|
 
 
 ### Scheduling and Cron jobs :

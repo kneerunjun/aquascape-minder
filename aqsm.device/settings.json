@@ -15,7 +15,7 @@
       },
       "lateafternoon":{
         "hours":"15-17", "minutes":"0-59",
-        "led":false,"airpump":true,"filter":false,"feeder":false
+        "led":false,"airpump":true,"filter":true,"feeder":false
       },
       "twilight":{
         "hours":"18", "minutes":"0-59",
