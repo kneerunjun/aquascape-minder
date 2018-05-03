@@ -25,7 +25,7 @@ At the current stage, we are not interested in harvesting consumable foliage / f
 
 ### Project Aquascape minder:
 
-![Project landscape](IMG_20180502_102112729_HDR.jpg "The entire system at a glance")
+![Project landscape](aquascapeminder.png "The entire system at a glance")
 
 A healthy aquarium with all natural aqua scape has precision controlled parameters. While the marine life can sustain some aberrations , it is best to have close control over the water body parameters.
 
