@@ -5,28 +5,27 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 import json, sys, datetime, pdb, hardware, logging
 
-try:
-    with open('/home/pi/src/aquascape-minder/aqsm.device/settings.json') as data_file:
-        settings = json.load(data_file)
-        settings = settings["settings"]
-except FileNotFoundError as fe:
-    print("schedules.py : failed to open the settings.json file ,check if the file is present and valid")
-    sys.exit(1)
-if settings!=None:
-    sched = BackgroundScheduler()
-# all these are slots in the schedules of an entire day
-# these are basically the slots where all you can go ahead and change the relay states
-riseandshine = settings["crons"]["riseandshine"]
-middaycalm = settings["crons"]["middaycalm"]
-middaycleanup=settings["crons"]["middaycleanup"]
-lateafternoon = settings["crons"]["lateafternoon"]
-twilight = settings["crons"]["twilight"]
-supper = settings["crons"]["supper"]
-night = settings["crons"]["night"]
-midnight = settings["crons"]["midnight"]
-darknight = settings["crons"]["darknight"]
-dawn= settings["crons"]["dawn"]
+sched = BackgroundScheduler()
 
+def read_cron_settings(strCronName=None):
+    '''Gets you the setting for the specific cron name
+    We know all the crons are addressed by their names we can pick a specific setting
+    if you do not provide the strCronName, it would return all the crons
+    '''
+    try:
+        with open('/home/pi/src/aquascape-minder/aqsm.device/settings.json') as data_file:
+            settings = json.load(data_file)["settings"]
+            crons = settings["crons"]
+            if strCronName !=None:
+                if strCronName in crons:
+                    return crons[strCronName]
+                else :
+                    raise Exception("Bad name for the cron setting, no such setting found - {0}".format(strCronName))
+            else:
+                return crons
+    except FileNotFoundError as fe:
+        print("schedules.py : failed to open the settings.json file ,check if the file is present and valid")
+        raise fe
 def switch_board(cronsettings):
     '''This is one stop place where all the cron jobs send their settings and the switch board is then operated accordingly
     settings        : variables from the global space denoting crons from settings.json
@@ -63,53 +62,43 @@ def switch_board(cronsettings):
         ok =hardware.turn_on_feeder()
     if ok!=0:
         logging.warning("aqsm.schedules:rise_and_shine: Error with Feeder switch_board")
-
-@sched.scheduled_job('cron', hour=riseandshine["hours"], minute=riseandshine["minutes"], timezone="Asia/Kolkata")
+cron_settings  = read_cron_settings()
+@sched.scheduled_job('cron', hour=cron_settings["riseandshine"]["hours"], minute=cron_settings["riseandshine"]["minutes"], timezone="Asia/Kolkata")
 def call_riseandshine():
-    global riseandshine
-    switch_board(riseandshine)
+    switch_board(read_cron_settings("riseandshine"))
 
-@sched.scheduled_job('cron', hour=middaycalm["hours"], minute=middaycalm["minutes"], timezone="Asia/Kolkata")
+@sched.scheduled_job('cron', hour=cron_settings["middaycalm"]["hours"], minute=cron_settings["middaycalm"]["minutes"], timezone="Asia/Kolkata")
 def call_middaycalm():
-    global middaycalm
-    switch_board(middaycalm)
+    switch_board(read_cron_settings("middaycalm"))
 
-@sched.scheduled_job('cron', hour=middaycleanup["hours"], minute=middaycleanup["minutes"], timezone="Asia/Kolkata")
+@sched.scheduled_job('cron', hour=cron_settings["middaycleanup"]["hours"], minute=cron_settings["middaycleanup"]["minutes"], timezone="Asia/Kolkata")
 def call_middaycleanup():
-    global middaycleanup
-    switch_board(middaycleanup)
+    switch_board(read_cron_settings("middaycleanup"))
 
-@sched.scheduled_job('cron', hour=lateafternoon["hours"], minute=lateafternoon["minutes"], timezone="Asia/Kolkata")
+@sched.scheduled_job('cron', hour=cron_settings["lateafternoon"]["hours"], minute=cron_settings["lateafternoon"]["minutes"], timezone="Asia/Kolkata")
 def call_lateafternoon():
-    global lateafternoon
-    switch_board(lateafternoon)
+    switch_board(read_cron_settings("lateafternoon"))
 
-@sched.scheduled_job('cron', hour=twilight["hours"], minute=twilight["minutes"], timezone="Asia/Kolkata")
+@sched.scheduled_job('cron', hour=cron_settings["twilight"]["hours"], minute=cron_settings["twilight"]["minutes"], timezone="Asia/Kolkata")
 def call_twilight():
-    global twilight
-    switch_board(twilight)
+    switch_board(read_cron_settings("twilight"))
 
-@sched.scheduled_job('cron', hour=supper["hours"], minute=supper["minutes"], timezone="Asia/Kolkata")
+@sched.scheduled_job('cron', hour=cron_settings["supper"]["hours"], minute=cron_settings["supper"]["minutes"], timezone="Asia/Kolkata")
 def call_supper():
-    global supper
-    switch_board(supper)
+    switch_board(read_cron_settings("supper"))
 
-@sched.scheduled_job('cron', hour=night["hours"], minute=night["minutes"], timezone="Asia/Kolkata")
+@sched.scheduled_job('cron', hour=cron_settings["night"]["hours"], minute=cron_settings["night"]["minutes"], timezone="Asia/Kolkata")
 def call_night():
-    global night
-    switch_board(night)
+    switch_board(read_cron_settings("night"))
 
-@sched.scheduled_job('cron', hour=midnight["hours"], minute=midnight["minutes"], timezone="Asia/Kolkata")
+@sched.scheduled_job('cron', hour=cron_settings["midnight"]["hours"], minute=cron_settings["midnight"]["minutes"], timezone="Asia/Kolkata")
 def call_midnight():
-    global midnight
-    switch_board(midnight)
+    switch_board(read_cron_settings("midnight"))
 
-@sched.scheduled_job('cron', hour=darknight["hours"], minute=darknight["minutes"], timezone="Asia/Kolkata")
+@sched.scheduled_job('cron', hour=cron_settings["darknight"]["hours"], minute=cron_settings["darknight"]["minutes"], timezone="Asia/Kolkata")
 def call_darknight():
-    global darknight
-    switch_board(darknight)
+    switch_board(read_cron_settings("darknight"))
 
-@sched.scheduled_job('cron', hour=dawn["hours"], minute=dawn["minutes"], timezone="Asia/Kolkata")
+@sched.scheduled_job('cron', hour=cron_settings["dawn"]["hours"], minute=cron_settings["dawn"]["minutes"], timezone="Asia/Kolkata")
 def dawn():
-    global dawn
-    switch_board(dawn)
+    switch_board(read_cron_settings("dawn"))
