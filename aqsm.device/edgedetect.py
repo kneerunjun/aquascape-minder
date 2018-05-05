@@ -21,6 +21,7 @@ class WaitOnFallingEdgeT(threading.Thread):
     def run(self):
         while not self.terminateEvent.wait(1) :
             time.sleep(1) # this thread does hardly anything, just sleeps waiting for edge to lower
+        return
     def upon_falling(self, channel):
         print("WaitOnFallingEdgeT: Edge detected on port {0}".format(self.chn))
 class WaitOnRisingEdgeT(threading.Thread):
@@ -39,6 +40,7 @@ class WaitOnRisingEdgeT(threading.Thread):
     def run(self):
         while not self.terminateEvent.wait(1) :
             time.sleep(1) # this thread does hardly anything, just sleeps waiting for edge to higher
+        return
     def upon_rising(self, channel):
         print("WaitOnRisingEdgeT: Edge detected on port {0}".format(self.chn))
 

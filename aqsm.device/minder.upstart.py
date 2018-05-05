@@ -2,7 +2,7 @@
 import signal,time,os, sys, threading
 from minder import GracefulExit,Interruption
 from multiprocessing import Process
-from edgedetect import WaitOnFallingEdgeT
+
 
 def start_minder():
     os.system("/home/pi/src/aquascape-minder/aqsm.device/minder.py")
