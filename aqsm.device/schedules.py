@@ -6,7 +6,6 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import json, sys, datetime, pdb, hardware, logging
 
 sched = BackgroundScheduler()
-
 def read_cron_settings(strCronName=None):
     '''Gets you the setting for the specific cron name
     We know all the crons are addressed by their names we can pick a specific setting
@@ -63,6 +62,7 @@ def switch_board(cronsettings):
     if ok!=0:
         logging.warning("aqsm.schedules:rise_and_shine: Error with Feeder switch_board")
 cron_settings  = read_cron_settings()
+
 @sched.scheduled_job('cron', hour=cron_settings["riseandshine"]["hours"], minute=cron_settings["riseandshine"]["minutes"], timezone="Asia/Kolkata")
 def call_riseandshine():
     switch_board(read_cron_settings("riseandshine"))

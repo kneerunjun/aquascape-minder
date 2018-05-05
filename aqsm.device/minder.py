@@ -68,7 +68,7 @@ class UpdateDisplayT(threading.Thread):
 class Interruption(Exception):
     pass
 class GracefulExit():
-    '''This helps in handling the system signals for the module and upon receving such signal would fire a custom Exception - which in turn signals any of program to quit and goto exception handling
+    '''This helps in handling the system signals for the module and upon receving such signal would fire a custom Exception - which in turn signals any of program to quit and goto exception handling. In short it converts the system signal into a python interruption 
     '''
     def __init__(self, *args, **kwargs):
         signal.signal(signal.SIGINT, self.upon_signal)
