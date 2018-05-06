@@ -4,6 +4,7 @@ from collections import namedtuple
 from queue import Queue
 import cloudlink, schedules
 
+
 logging.basicConfig(filename="aqsm.log",
                     filemode='a',
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
@@ -25,7 +26,7 @@ def config_from_json():
 def check_configure(config):
     return True
 class SensingT(threading.Thread):
-    '''Worker thread that does all the sensing on the device
+    '''We are modifying this to have the temperature sensing using ADS115x and Adafruit
     '''
     def __init__(self,ke,cfg):
         super(SensingT,self).__init__()
@@ -33,7 +34,7 @@ class SensingT(threading.Thread):
         self.config = cfg
     def run(self):
         while not self.killEvent.wait(1):
-            print("Monitoring now..")
+            waterTemp =hardware.read_water_temp()
             time.sleep(self.config["delays"]["sensing"])
         print("Now exiting the sensing")
 class InterruptT(threading.Thread):
@@ -68,7 +69,7 @@ class UpdateDisplayT(threading.Thread):
 class Interruption(Exception):
     pass
 class GracefulExit():
-    '''This helps in handling the system signals for the module and upon receving such signal would fire a custom Exception - which in turn signals any of program to quit and goto exception handling. In short it converts the system signal into a python interruption 
+    '''This helps in handling the system signals for the module and upon receving such signal would fire a custom Exception - which in turn signals any of program to quit and goto exception handling. In short it converts the system signal into a python interruption
     '''
     def __init__(self, *args, **kwargs):
         signal.signal(signal.SIGINT, self.upon_signal)

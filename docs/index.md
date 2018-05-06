@@ -1,3 +1,18 @@
+### My aquarium and IoT :
+
+> I know !, this IoT thingee has gone just too far this time. Seriously?  now you don't want to tend your fish too ? Why get an aquarium in the first place when you prefer to leave that to machines too !
+
+A typical automation naysayer can be spotted here or there quoting such counters to ideas such as these. We on the other hand are sane to understand that while machines take over the drudgery of repetitive tasks , in turn allow us to focus on higher / more complex tasks.
+
+>Urban farming would take over some day, and we would be compelled to design efficient ways of getting chemical-free food to our tables using the least of natural resources, if not then find ways to recycle them.
+
+I just went ahead of myself there, but back on planet `reality` we just hope the `theory of emergence` is working its ways , pointing us to create what could be building blocks of urban vertical farming.
+
+[Some interesting video on theory of emergence](https://youtu.be/16W7c0mb-rE)
+
+
+
+
 ### All natural elements aquascape
 ![Aquarium elevation](IMG-20180426-WA0027.jpg "An all biological aquascape")
 

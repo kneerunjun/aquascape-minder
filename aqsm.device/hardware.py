@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import Adafruit_CharLCD as LCD
 import pdb, datetime
+import Adafruit_ADS1x15
 # All the gpio identifications  on the BCM based numbering
 # you would want to try out gpio readall - to know more on the BCM based numbering
 LEDGPIO=17          #physical pin 11
@@ -15,7 +16,10 @@ LCD_D4 = 26         # physical= 37
 LCD_D5 = 19         # physical= 35
 LCD_D6 = 13         # physical= 33
 LCD_D7 = 6          # physical= 31
+GAINFACTOR = (8, 0.512)# 8 = +/-0.512V : since currently we have temperature not going beyond 50
+TEMPCHN =3           # we have the signal from the LM35 connected to the A3 channel
 lcd = None          # global lcd handle, can be used after the init call
+adc = Adafruit_ADS1x15.ADS1115()    #inititlization of the ADC chipset
 def init():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
@@ -45,6 +49,11 @@ def flush():
     global lcd
     lcd.clear()
     GPIO.cleanup()
+def read_water_temp():
+    global adc
+    volts = (GAINFACTOR[1]*adc.read_adc(TEMPCHN, gain=GAINFACTOR[0]))/32768
+    temp = round(volts*100,2)
+    return temp
 def led_status():
     return GPIO.input(LEDGPIO)
 def turn_on_led():
