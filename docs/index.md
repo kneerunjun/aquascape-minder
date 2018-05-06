@@ -6,12 +6,13 @@ A typical automation naysayer can be spotted here or there quoting such counters
 
 >Urban farming would take over some day, and we would be compelled to design efficient ways of getting chemical-free food to our tables using the least of natural resources, if not then find ways to recycle them.
 
-I just went ahead of myself there, but back on planet `reality` we just hope the `theory of emergence` is working its ways , pointing us to create what could be building blocks of urban vertical farming.
+I just went ahead of myself there, but back on planet __reality__ we just hope the __theory of emergence__ is working its ways , pointing us to create what could be building blocks of urban vertical farming.
 
 [Some interesting video on theory of emergence](https://youtu.be/16W7c0mb-rE)
 
+Without getting prophetic about it , Here is what I'm trying to do :
 
-
+> I'm trying to create a precision clock-controlled environment in the aquarium that would summon all the electrical accessories as per a pre-designed schedule. It also would sense the various parameters of the water body setting up alarm and actuation systems.
 
 ### All natural elements aquascape
 ![Aquarium elevation](IMG-20180426-WA0027.jpg "An all biological aquascape")
