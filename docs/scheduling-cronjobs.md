@@ -33,4 +33,22 @@ def call_this_on_trigger():
 sched.start()
 ```
 
-Using decorators is always better , one for it makes you look cool, and then recollecting the logic at a later date is so very easy.
+Using decorators is always better , one for it makes you look cool, and two, then recollecting the logic at a later date is so very easy. If you are not a big fan of using the decorators in python here is a more traditional approach to adding jobs to the scheduler. A distinct function call to add and to remove the jobs. Now you see why decorators are neat ? Letting the job have an `id` would mean you can retrieve the job and then access all the functions on it.
+
+```python
+scheduler.add_job(myfunc, 'interval', minutes=2, id='my_job_id')
+scheduler.remove_job('my_job_id')
+```
+Pausing and resuming the scheduler is straight function calls. This would nullify all the triggers while keeping the scheduler alive.
+
+```python
+scheduler.pause()
+scheduler.resume()
+```
+
+Finally shutting down the scheduler
+
+```python
+scheduler.shutdown()
+```
+> This by no means to replace the API documentation. The intention is just to help to get jump started with the scheduler without having to dig deep into the documentation. So while you can get your initial program working with this, for indepth information it is still recommended to refer to the official API documentation
