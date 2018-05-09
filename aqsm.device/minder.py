@@ -4,7 +4,6 @@ from collections import namedtuple
 from queue import Queue
 import cloudlink, schedules
 
-
 logging.basicConfig(filename="aqsm.log",
                     filemode='a',
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
