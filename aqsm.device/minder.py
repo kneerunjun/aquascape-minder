@@ -24,47 +24,6 @@ def config_from_json():
     }
 def check_configure(config):
     return True
-class SensingT(threading.Thread):
-    '''We are modifying this to have the temperature sensing using ADS115x and Adafruit
-    '''
-    def __init__(self,ke,cfg):
-        super(SensingT,self).__init__()
-        self.killEvent  = ke
-        self.config = cfg
-    def run(self):
-        while not self.killEvent.wait(1):
-            waterTemp =hardware.read_water_temp()
-            time.sleep(self.config["delays"]["sensing"])
-        print("Now exiting the sensing")
-class InterruptT(threading.Thread):
-    '''Worker thread that waits in anticipation of any hardware interrupt.
-    Upon an interrupt this would trigger an event that in turn requests all threads to exit
-    '''
-    def __init__(self,ke,cfg):
-        super(InterruptT,self).__init__()
-        self.killEvent  = ke
-        self.config = cfg
-    def run(self):
-        count = 10000
-        while count !=0:
-            count=count-1
-            time.sleep(self.config["delays"]["interrupt"])
-        print("We have an interrupt, perhaps an hardware interrupt")
-        self.killEvent.set()        # this point where we ask all the other threads to exit
-        return 0
-class UpdateDisplayT(threading.Thread):
-    '''This goes around in a loop updating the display lcd for the status of all the devices
-    This would also update the time
-    '''
-    def __init__(self,ke, cfg):
-        super(UpdateDisplayT,self).__init__()
-        self.killEvent  = ke
-        self.config = cfg
-    def run(self):
-        while not self.killEvent.wait(1):
-            hardware.display()
-            time.sleep(self.config["delays"]["display"])
-        print("Now exiting the display updating loop")
 class Interruption(Exception):
     pass
 class GracefulExit():
@@ -77,31 +36,41 @@ class GracefulExit():
     def upon_signal(self, signum, frame):
         raise Interruption
 # ref :https://stackoverflow.com/questions/419163/what-does-if-name-main-do#419185
+def display_loop(sb, ke):
+    disp = hardware.AqsmOLED()
+    while not ke.wait(1):
+        disp.display_status(sb)
+    disp.shutd()
+def temp_loop(sb, ke):
+    tmtr = hardware.AqsmThermometer()
+    while not ke.wait(10):
+        tmtr.measure(sb)
 if __name__ == "__main__":
     try:
-        threaded_tasks =[]
-        logging.info("aqsm.device.minder :Running Aquascape minder")
+        threaded_tasks =[] # for housing all the threaded tasks
+        killEvent  = threading.Event()  # to signal all the threaded tasks to flush and shutdown
+        gExit  = GracefulExit() # this handles the Ctrl +C and system signals and raises the exception here in the main thread - Interruption
+        sb = hardware.SwitchBoard()         # this operates on all the moving parts, thread safe
+        sched = schedules.Scheduler(sb)     # this sets up the calendar trigger, at crons in the day
         # subprocess.call(["./setsysdatefromweb.sh"])
-        config =config_from_json()              # loads the configuration from a json file
-        hardware.init()                    # after init the function returns a handle to the lcd, so that we can use the same handle across threads
-        killEvent  = threading.Event()
-        gExit  = GracefulExit()
-        sensing = SensingT(ke=killEvent,cfg=config)
-        displaying = UpdateDisplayT(ke=killEvent,cfg=config)
-        threaded_tasks.append(sensing)
-        threaded_tasks.append(displaying)
-        sensing.start()
-        displaying.start()
-        if schedules.sched !=None:
-            schedules.sched.start()
-        print("Running minder.py now!")
+        t_disp  = threading.Thread(target=display_loop, args=(sb,killEvent))
+        threaded_tasks.append(t_disp)
+        t_temp  = threading.Thread(target=temp_loop, args=(sb,killEvent))
+        threaded_tasks.append(t_temp)
+        t_disp.start()                      #displaying loop starts with this
+        t_temp.start()                      # measuring the temp starts with this
         for t in threaded_tasks:
             t.join()
-        print("All the threaded tasks are now done!, Exiting")
+        # all the threads have returned, we can start shutdown sequence
+        sched.shutd()
+        sb.shutd()
+        hardware.flush()
         sys.exit(0)
     except Interruption as interr:
+        #incase of SIG interruption the code in the main thread would end up here
+        print("System interruption, shutting down !")
         killEvent.set()
-        schedules.sched.shutdown()
+        sched.shutd()
+        sb.shutd()
         hardware.flush()
-        print("Exiting minder.py")
         sys.exit(0)
