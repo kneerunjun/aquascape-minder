@@ -2,7 +2,7 @@
 
 ![Scheduler working fine](IMG_20180514_091804284-2.jpg "A working scheduler")
 
-My project here needed me to schedule jobs , code functions running at specific times of the day, on all days. [My aquarium and IoT](https://kneerunjun.github.io/aquascape-minder/). Here the aquarium needed specific electrical accessories to be turned ON /OFF depending on the time of the day. This ensures optimum run time for all the accessories and also lets the aquarium owners be hands-off from the sustenance tasks.
+My project [My aquarium and IoT](https://kneerunjun.github.io/aquascape-minder/) needed me to schedule jobs , code functions running at specific times of the day, on all days. . Here the aquarium needed specific electrical accessories to be turned ON /OFF depending on the time of the day. This ensures optimum run time for all the accessories and also lets the aquarium owners be hands-off from the sustenance tasks.
 
 For people who don't like any 3rd party software / packages / frameworks written for them , would of course rely on a __continuous loops__ checking for the current time. A bit of time calculations and formatting in python (which I don't think is too cumbersome) can still get you there.
 
@@ -76,3 +76,5 @@ Finally shutting down the scheduler
 scheduler.shutdown()
 ```
 > This by no means to replace the API documentation. The intention is just to help to get jump started with the scheduler without having to dig deep into the documentation. So while you can get your initial program working with this, for in depth information it is still recommended to refer to the official API documentation
+
+** __I'm running this on Raspberry Pi with Raspbian Jessi as the operatin system. All the references and the snippets hence indicate a strong Linux affinity. Nevertheless cron jobbing is not a Linux only phenomenon.__
