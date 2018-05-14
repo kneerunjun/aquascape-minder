@@ -1,5 +1,7 @@
 ### Cron jobs, interval jobs, dated jobs
 
+![Scheduler working fine](IMG_20180514_091804284-2.jpg "A working scheduler")
+
 My project here needed me to schedule jobs , code functions running at specific times of the day, on all days. [My aquarium and IoT](https://kneerunjun.github.io/aquascape-minder/). Here the aquarium needed specific electrical accessories to be turned ON /OFF depending on the time of the day. This ensures optimum run time for all the accessories and also lets the aquarium owners be hands-off from the sustenance tasks.
 
 For people who don't like any 3rd party software / packages / frameworks written for them , would of course rely on a __continuous loops__ checking for the current time. A bit of time calculations and formatting in python (which I don't think is too cumbersome) can still get you there.
