@@ -1,7 +1,0 @@
-[Unit]
-Description=This cranks up the aquascape minder on the onset of the machine start
-[Service]
-Type=simple
-ExecStart=/home/pi/src/aquascape-minder/aqsm.device/minder.upstart.py
-[Install]
-WantedBy=graphical.target
