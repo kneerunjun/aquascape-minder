@@ -1,0 +1,52 @@
+{
+  "gpio":{
+    "led":17,
+    "air":27,
+    "flt":22,
+    "fdr":26,
+    "htr":19
+  },
+  "schedules":{
+    "riseandshine":{"hours":"6-11","minutes":"0-59","led":1,"air":1,"flt":0,"fdr":0},
+    "middaycalm":{
+      "hours":"12-13", "minutes":"0-59",
+      "led":0,"air":0,"flt":0,"fdr":1
+    },
+    "middaycleanup":{
+      "hours":"14", "minutes":"0-59",
+      "led":0,"air":0,"flt":1,"fdr":0
+    },
+    "lateafternoon":{
+      "hours":"15-17", "minutes":"0-59",
+      "led":0,"air":1,"flt":1,"fdr":0
+    },
+    "twilight":{
+      "hours":"18", "minutes":"0-59",
+      "led":1,"air":1,"flt":0,"fdr":0
+    },
+    "supper":{
+      "hours":"19", "minutes":"0-59",
+      "led":1,"air":0,"flt":0,"fdr":1
+    },
+    "night":{
+      "hours":"20-21", "minutes":"0-59",
+      "led":1,"air":0,"flt":1,"fdr":0
+    },
+    "midnight":{
+      "hours":"22-23", "minutes":"0-59",
+      "led":0,"air":0,"flt":1,"fdr":0
+    },
+    "darknight":{
+      "hours":"0-3", "minutes":"0-59",
+      "led":0,"air":0,"flt":0,"fdr":0
+    },
+    "dawn":{
+      "hours":"4-5", "minutes":"0-59",
+      "led":0,"air":0,"flt":1,"fdr":0
+    },
+    "test":{
+      "hours":"15-16", "minutes":"0-59",
+      "led":1,"air":1,"flt":1,"fdr":0
+    }
+  }
+}
