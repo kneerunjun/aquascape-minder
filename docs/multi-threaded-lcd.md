@@ -45,6 +45,8 @@ class TSafeDashB():
         return result
 ```
 
+A keen eye can make out it is a simple ambience sensing project perhaps , a couple of sensors that `put` their value to the `TSafeDashB`. Please note how each of the data modification operation under the vigilance of a threading lock. The same TSafeDashB then allows the LCD to fetch values using functions like `temp()`, also not without having acquired the `lock`
+
 #### References
 ---
 
