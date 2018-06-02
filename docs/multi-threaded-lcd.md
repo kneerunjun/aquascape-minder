@@ -13,7 +13,37 @@ I have illustrated how your software objects could be when you are working with 
 
 ### TSafe Object that implements thread lock :
 
-I know most of you Python stalwarts would boo me down when I mention `threading.Lock()` but for the simple case we are talking about , something as raw as thread Lock is sufficient. Moreover I dont want to make this discussion around `threading` in Python
+I know most of you Python stalwarts would boo me down when I mention `threading.Lock()` but for the simple case we are talking about , something as raw as thread Lock is sufficient. Moreover I dont want to make this discussion around `threading` in Python. A simple thread locked data object may end up looking like this
+
+```python
+class TSafeDashB():
+    def __init__(self,*args, **kwargs):
+        self._temp = None
+        self._light=None
+        self._co2=None
+        self._co=None
+        self._aqi=None
+        self._lck  = threading.Lock()
+    def put(self,temp=None,light=None,co2=None,co=None,aqi=None):
+        self._lck.acquire()
+        if temp !=None:
+            self._temp=temp
+        if light!=None:
+            self._light=light
+        if co2!=None:
+            self._co2=co2
+        if co!=None:
+            self._co=co
+        if aqi!=None:
+            self._aqi=aqi   #this comes from the alarm system
+        self._lck.release()
+        return None
+    def temp(self):
+        self._lck.acquire()
+        result = self._temp
+        self._lck.release()
+        return result
+```
 
 #### References
 ---
