@@ -7,3 +7,12 @@ You would often find yourself wrestling around with the connections for an LCD a
 Make a diagram to exaplain what I want to bring about  - Sequential access and multi-threaded simulteneous access
 
 ![Illustrating Tsafe LED](tsafeled.jpg)
+
+
+#### References
+---
+
+- [Raspberry Pi Icon, DesignBite at Noun project](https://thenounproject.com/)
+- [LCD Display icon, Deemak Dakshina at Noun project](https://thenounproject.com/)
+- [Software Object icon, Arthur Shlain at Noun project](https://thenounproject.com/)
+- [Sensor icon, Duy Shung at Noun project](https://thenounproject.com/)
