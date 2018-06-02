@@ -4,7 +4,7 @@ You would often find yourself wrestling around with the connections for an LCD a
 
 > Mixing threads and the LCD, that is not so fast, can leave you with a LCD with alien characters on the screen. While it can excite some of you thinking it to be some message from the Decepticons :) , it really is some issue with the underlying threaded applications. Are there multiple threads accessing the LCD ?
 
-Make a diagram to exaplain what I want to bring about  - Sequential access and multi-threaded simulteneous access
+![Illustrating Tsafe LED](tsafeled(2).jpg)
 
 ![Illustrating Tsafe LED](tsafeled.jpg)
 
