@@ -9,7 +9,11 @@ Make a diagram to exaplain what I want to bring about  - Sequential access and m
 ![Illustrating Tsafe LED](tsafeled.jpg)
 
 
-I have illustrated how your software objects could be when you are working with one or more sensors letting their data display on screens like a 16X2 LCD.
+I have illustrated how your software objects could be when you are working with one or more sensors letting their data display on screens like a 16X2 LCD.In either of the cases you would an thread safe data object , representing the object model of the solution in entirety. 
+
+### TSafe Object that implements thread lock :
+
+I know most of you Python stalwarts would boo me down when I mention `threading.Lock()` but for the simple case we are talking about , something as raw as thread Lock is sufficient. Moreover I dont want to make this discussion around `threading` in Python
 
 #### References
 ---
