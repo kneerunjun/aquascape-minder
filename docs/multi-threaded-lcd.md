@@ -6,4 +6,4 @@ You would often find yourself wrestling around with the connections for an LCD a
 
 Make a diagram to exaplain what I want to bring about  - Sequential access and multi-threaded simulteneous access
 
-[Illustrating Tsafe LED](tsafeled.gif, "Just a illustration")
+![Illustrating Tsafe LED](tsafeled.gif, "Just a illustration")
