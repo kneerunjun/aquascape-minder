@@ -9,6 +9,8 @@ Make a diagram to exaplain what I want to bring about  - Sequential access and m
 ![Illustrating Tsafe LED](tsafeled.jpg)
 
 
+I have illustrated how your software objects could be when you are working with one or more sensors letting their data display on screens like a 16X2 LCD.
+
 #### References
 ---
 
