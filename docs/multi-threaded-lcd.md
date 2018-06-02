@@ -46,6 +46,13 @@ class TSafeDashB():
 
 A keen eye can make out it is a simple ambience sensing project perhaps , a couple of sensors that `put` their value to the `TSafeDashB`. Please note how each of the data modification operation under the vigilance of a threading lock. The same TSafeDashB then allows the LCD to fetch values using functions like `temp()`, also not without having acquired the `lock`
 
+### Sensing and Displaying can be tasks running on co-operative threads :
+
+What a novice programmer might prefer is updating the display only after the sensor voltages are read back in and the calculations are done. This renders the LCD a bit patchy , feels like the display has a stammer. The solution here is to get it on a thread (but still co-processed) along with the sensing loop. 
+
+A display update could be more frequent giving it a responsive outlook. Sensing loops ofcourse can have custom intervals at which you would like to measure the physical phenomenon.
+
+
 #### References
 ---
 
