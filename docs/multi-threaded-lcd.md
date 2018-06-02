@@ -54,3 +54,4 @@ A keen eye can make out it is a simple ambience sensing project perhaps , a coup
 - [LCD Display icon, Deemak Dakshina at Noun project](https://thenounproject.com/)
 - [Software Object icon, Arthur Shlain at Noun project](https://thenounproject.com/)
 - [Sensor icon, Duy Shung at Noun project](https://thenounproject.com/)
+- [Cover image](http://www.circuitbasics.com/raspberry-pi-lcd-set-up-and-programming-in-python/)
