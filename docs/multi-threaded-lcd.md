@@ -1,6 +1,7 @@
 ![cover](Raspberry-Pi-LCD-Set-Up-and-Programming-in-Python-Temperature-Sensor-Output-to-LCD-1.jpg)
 
 #### Thread safe 16X2 LCD 4Bit mode on Raspberry Pi
+----
 
 You would often find yourself wrestling around with the connections for an LCD and the Adafruit library [here](https://github.com/adafruit/Adafruit_Python_CharLCD). They have distilled the entire setup and personally I feel it cannot be any more easier than that. But there is always that odd spot where you find either a blank screen or screen full of just contratsting boxes. Afterall, 4 data, 2 selects, and couple of supply voltages makes it too many connections. (Just bumps up the number of possibilities you may go wrong) Either of the cases , after some efforts when you finally get the basic text display on the screen you are hoping that it would be an easy ride ahead of this.
 
@@ -11,6 +12,7 @@ You would often find yourself wrestling around with the connections for an LCD a
 I have illustrated how your software objects could be when you are working with one or more sensors letting their data display on screens like a 16X2 LCD.In either of the cases you would an thread safe data object , representing the object model of the solution in entirety. 
 
 #### TSafe Object that implements thread lock :
+----
 
 I know most of you Python stalwarts would boo me down when I mention `threading.Lock()` but for the simple case we are talking about , something as raw as thread Lock is sufficient. Moreover I dont want to make this discussion around `threading` in Python. A simple thread locked data object may end up looking like this
 
@@ -47,6 +49,7 @@ class TSafeDashB():
 A keen eye can make out it is a simple ambience sensing project perhaps , a couple of sensors that `put` their value to the `TSafeDashB`. Please note how each of the data modification operation under the vigilance of a threading lock. The same TSafeDashB then allows the LCD to fetch values using functions like `temp()`, also not without having acquired the `lock`
 
 #### Sensing and Displaying can be tasks running on co-operative threads :
+----
 
 What a novice programmer might prefer is updating the display only after the sensor voltages are read back in and the calculations are done. This renders the LCD a bit patchy , feels like the display has a stammer. The solution here is to get it on a thread (but still co-processed) along with the sensing loop. 
 
@@ -65,6 +68,7 @@ A display update could be more frequent giving it a responsive outlook. Sensing 
 #### Notes 
 ----
 
-- I have used Raspbian Jessie, on Raspberry Pi 3B 
-- My Raspberry runs python3.5
+- My Raspberry runs python3.5 on Raspbian Jessie
 - 16X2 LCD HD44780U , is a green backlight LCD
+- I have tested the LCD working for about 48 hours continuous. The above method has not yet scrambled the LCD
+- Im using `threading.Thread` standard threading library 
