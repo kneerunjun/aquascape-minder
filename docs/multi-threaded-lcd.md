@@ -60,6 +60,7 @@ Notice,that I mentioned , __co-operative__ , all the threads that I have are evi
 ```python
 while True 
     # do some sensing here
+    time.sleep(1.0)
 
 ```
 I prefer these :
