@@ -3,7 +3,7 @@ import signal,time,os, sys, threading
 from signalhandling import GracefulExit,Interruption
 from multiprocessing import Process
 def start_minder():
-    os.system("/home/pi/src/aquascape-minder/aqsm.device/minder.py")
+    os.system("/home/pi/src/aquascape.minder/aqsm.device/minder.py")
 
 if __name__ == "__main__":
     try:
@@ -17,4 +17,4 @@ if __name__ == "__main__":
         # either when minder.upstart was Ctrl+C or the service was called off using systemctl
         # we call off minder.py too by sending a SIGINT signal and then exiting the system
         os.kill(startMinderProc.pid, signal.SIGINT)
-        sys.exit(1)
+        sys.exit(0)

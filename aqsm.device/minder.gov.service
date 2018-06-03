@@ -1,0 +1,7 @@
+[Unit]
+Description=This helps to govern the main minder.service with a hardware interface
+[Service]
+Type=simple
+ExecStart=/home/pi/src/aquascape.minder/aqsm.device/minder.gov.py
+[Install]
+WantedBy=graphical.target

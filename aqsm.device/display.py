@@ -19,7 +19,7 @@ class OLEDDisp():
         self.image = Image.new('1', (self.w, self.h))
         self.draw = ImageDraw.Draw(self.image)
         self.fontSz = 9
-        self.font  = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf', self.fontSz)
+        self.font  = ImageFont.truetype('/usr/share/fonts/truetype/msttcorefonts/Trebuchet_MS.ttf', self.fontSz)
     def draw_text(self,text,x,y):
         self.draw.text((x,y),text,font=self.font,fill=255)
         return self

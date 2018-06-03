@@ -4,7 +4,7 @@ from switch import SwitchModes
 class TSafeSettings():
     def __init__(self, *args, **kwargs):
         self._lck = threading.Lock()    #settings also has to be tsafe
-        self._file ="/home/pi/src/aquascape-minder/aqsm.device/config.json"
+        self._file ="/home/pi/src/aquascape.minder/aqsm.device/config.json"
     def gpio(self):
         '''This tries to get the gpio pin settings for each of the device
         alternatively this would help us define the pins for all the hardware components here in a single settings file which can be changed remotely too and can be read into anew everytime the program starts
