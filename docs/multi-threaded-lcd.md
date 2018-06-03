@@ -55,12 +55,35 @@ What a novice programmer might prefer is updating the display only after the sen
 
 A display update could be more frequent giving it a responsive outlook. Sensing loops ofcourse can have custom intervals at which you would like to measure the physical phenomenon.
 
+Notice,that I mentioned , __co-operative__ , all the threads that I have are evicted out of action on an `threading.Event()` set. Sensing loops enjoy independent threads , but run only till the __event__ is set. So instead of having rogue while loops like these 
+
+```python
+while True 
+    # do some sensing here
+
+```
+I prefer these :
+
+```python
+
+while not killEvent.wait(1.0)
+    # do some sensing here 
+```
+In the prior case , trying to stop the loop from running is much more violent and offers much less of the chance to the hardware to flush. While in the later you have to give it some time (atleast equal to the wait time) before the threads come off co-operatively.
+
+```python
+killEvent.set()
+time.sleep(2.0) # since the sensing loops are 1.0 intervals
+GPIO.cleanup()
+sys.exit(0)
+```
 
 #### n-process instead of n-thread :
 ---
 
-Python programmers prefer this , Im aware. Processess are cleaner and have better data marshalling between the simulteneous running tasks. However in the n-process case there is a tradeoff with heat dissipiation (keeping multiple processors busy). RPi is no monster and has meager 4 that can be scheduled. Any more than that would mean you need a aluminium heat sinks to ward off the extra heat. If threads weigh on you and it becomes difficult to bend your mindaround it, managing the heat from the MCU is certainly much easier.
+Python programmers prefer this , Im aware. Processess are cleaner and have better data marshalling between the simulteneous running tasks. However in the n-process case there is a tradeoff with heat dissipiation (keeping multiple processors busy). RPi is no monster and has meager 4 that can be scheduled. Any more than that would mean you need a aluminium heat sinks to ward off the extra heat. If threads weigh on you and it becomes difficult to bend your mind around it, managing the heat from the MCU is certainly much easier.
 
+I had a simple case, locks and events did a good job. 
 
 #### References
 ---
