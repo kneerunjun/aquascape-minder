@@ -11,7 +11,7 @@ You would often find yourself wrestling around with the connections for an LCD a
 
 I have illustrated how your software objects could be when you are working with one or more sensors, letting their data display on screens like a 16X2 LCD.In either of the cases you would need a thread safe data object , representing the object model of the solution in entirety. 
 
-#### TSafe Object that implements thread lock :
+### TSafe Object that implements thread lock :
 ----
 
 I know most of you Python stalwarts would boo me down when I mention `threading.Lock()` but for the simple case we are talking about , something as raw as 'thread Lock' is sufficient. Moreover I dont want to make this discussion around `threading` in Python. A simple thread locked data object may end up looking like this
@@ -48,7 +48,7 @@ class TSafeDashB():
 
 A keen eye can make out that it is a simple ambience sensing project perhaps , a couple of sensors that `put` their value to the `TSafeDashB`. Please note each of the data modification operations under the vigilance of a threading lock. The same TSafeDashB then allows the LCD to fetch values using functions like `temp()`, also not without having acquired the `lock`
 
-#### Sensing and Displaying can be tasks running on co-operative threads :
+### Sensing and Displaying can be tasks running on co-operative threads :
 ----
 
 What a novice programmer might prefer is updating the display only after the sensor voltages are read back in and the calculations are done. This renders the LCD a bit patchy , feels like the display has a stammer. The solution here is to get it on a thread (but still co-processed) along with the sensing loop. 
@@ -79,14 +79,14 @@ GPIO.cleanup()
 sys.exit(0)
 ```
 
-#### n-process instead of n-thread :
+### n-process instead of n-thread :
 ---
 
 Python programmers prefer this , I'm aware. Processess are cleaner and have better data marshalling between the simulteneous running tasks. However in the n-process case there is a tradeoff with heat dissipiation (keeping multiple processors busy). RPi is no monster and has meager 4 that can be scheduled. Any more than that would mean you need an aluminium heat sink to ward off the extra heat. If threads weigh on you and it becomes difficult to bend your mind around it, managing the heat from the MCU is certainly much easier.
 
 I had a simple case, locks and events did a good job. 
 
-#### References
+### References
 ---
 
 - [Raspberry Pi Icon, DesignBite at Noun project](https://thenounproject.com/)
@@ -95,7 +95,7 @@ I had a simple case, locks and events did a good job.
 - [Sensor icon, Duy Shung at Noun project](https://thenounproject.com/)
 - [Cover image](http://www.circuitbasics.com/raspberry-pi-lcd-set-up-and-programming-in-python/)
 
-#### Notes 
+### Notes 
 ----
 
 - My Raspberry runs python3.5 on Raspbian Jessie
